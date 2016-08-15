@@ -22,7 +22,7 @@
         "simplesoftwareio/simple-qrcode": "1.*",
         "slynova/laravel-commentable": "^2.0",
 
-        "spatie/laravel-activitylog": "^1.2",
+        "spatie/laravel-activitylog": "^1.6",
         "spatie/laravel-backup": "^3.9",
         "spatie/laravel-permission": "1.5.*@dev",
         "spatie/laravel-link-checker": "^1.0",

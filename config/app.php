@@ -212,6 +212,7 @@ return [
         Slynova\Commentable\ServiceProvider::class,
 
 
+        // package for tracking user's activity see `starter/admintools` for all tools
         Spatie\Activitylog\ActivitylogServiceProvider::class,
 
 
@@ -318,6 +319,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Date' => Jenssegers\Date\Date::class,
+        'Activity' => Spatie\Activitylog\Models\Activity::class,
 
         // custom-made helpers
         'dateHelper'=> App\Helpers\DateHelper::class,

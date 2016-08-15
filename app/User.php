@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Unrulynatives\Helpers\UserExtensions;
+// use Spatie\Activitylog\Models\Activity; // used for user tranking tool
 
 class User extends Authenticatable
 {
@@ -41,5 +42,8 @@ class User extends Authenticatable
     }
 
 
-
+    public function activity() {
+        return $this->hasMany('Activity', 'causer_id');
+    }
+    
 }

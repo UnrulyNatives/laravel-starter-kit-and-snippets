@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "adbb3714d3c73decfabab48a5c104137",
-    "content-hash": "d8df783a6c40318eb3201daf09887660",
+    "hash": "86c1dd009fc213260f98bdb5e20ad818",
+    "content-hash": "0c5ecc3604791b130df975295a672a85",
     "packages": [
         {
             "name": "amranidev/ajaxis",
@@ -1826,12 +1826,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ab5aab4a2b0082cf6376202643d98ae3e519fa10"
+                "reference": "0a8e21bb1e43e6fc70cc87398cdfbb6f4a86b306"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ab5aab4a2b0082cf6376202643d98ae3e519fa10",
-                "reference": "ab5aab4a2b0082cf6376202643d98ae3e519fa10",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0a8e21bb1e43e6fc70cc87398cdfbb6f4a86b306",
+                "reference": "0a8e21bb1e43e6fc70cc87398cdfbb6f4a86b306",
                 "shasum": ""
             },
             "require": {
@@ -1945,7 +1945,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-15 00:42:16"
+            "time": "2016-08-15 17:23:02"
         },
         {
             "name": "laravel/socialite",

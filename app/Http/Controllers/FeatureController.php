@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Feature;
+use App\Models\Feature;
 use Amranidev\Ajaxis\Ajaxis;
 use URL;
 
@@ -24,6 +24,7 @@ class FeatureController extends Controller
     public function index()
     {
         $features = Feature::all();
+        activity()->log('Feature index opened'); // spatie activity-log
         return view('feature.index',compact('features'));
     }
 

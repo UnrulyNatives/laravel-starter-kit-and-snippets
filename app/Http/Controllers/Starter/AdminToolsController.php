@@ -52,45 +52,50 @@ class AdminToolsController extends Controller
     public function remove_status_null($itemkind=null) {
 
 
+        if($itemkind != null) {
+            
+            $itemtype = str_singular($itemkind);
 
-        $itemtype = str_singular($itemkind);
+            //getting Class name
+            $class_name = ucfirst($itemtype);
+            $name = "App\\Models\\" . $class_name;
+            $class = new $name;
 
-        //getting Class name
-        $class_name = ucfirst($itemtype);
-        $name = "App\\Models\\" . $class_name;
-        $class = new $name;
+            
+            if (class_exists($name) && get_parent_class($class) == 'Illuminate\Database\Eloquent\Model') {
+                $object = $class->where('status',null)->get();
+            }
 
-        
-        if (class_exists($name) && get_parent_class($class) == 'Illuminate\Database\Eloquent\Model') {
-            $object = $class->where('status',null)->get();
+            // doing the job!
+            $perform = Input::get('perform');
+            if(isset($perform) && $perform=1) {
+                $acteduponarray = $class->where('status',null)->pluck('id');
+                $affected = $acteduponarray->count();
+
+                // the action itself:
+                $itemstobeacteduponbefore = $class->where('status',null)->count();
+                // $actedupon = $class->destroy($acteduponarray);
+                $class->whereIn('id', $acteduponarray)->delete(); 
+                $itemstobeacteduponafter = $class->where('status',null)->count();
+
+                // $affected = count($acteduponarray);
+            }
+
         }
-
-        // doing the job!
-        $perform = Input::get('perform');
-        if(isset($perform) && $perform=1) {
-            $acteduponarray = $class->where('status',null)->pluck('id');
-            $affected = $acteduponarray->count();
-
-            // the action itself:
-            $itemstobeacteduponbefore = $class->where('status',null)->count();
-            // $actedupon = $class->destroy($acteduponarray);
-            $class->whereIn('id', $acteduponarray)->delete(); 
-            $itemstobeacteduponafter = $class->where('status',null)->count();
-
-            // $affected = count($acteduponarray);
-        }
-
 
 
         return View::make('starter.admin.tools.remove_status_null', compact('object','perform','affected','itemstobeacteduponbefore','itemstobeacteduponafter'))->with('task', 'view')->with('itemkind', 'userlogs');
     }
 
 
-    public function user_track($id) {
+    public function user_track($id=null) {
 
         $object = User::find($id);
+        if(!$object) {
+            $object = User::find(Auth::id());
+        }
 
-        return View::make('admin.tools.user_track', compact('object'))->with('task', 'view')->with('itemkind', 'userlogs');
+        return View::make('starter.admin.tools.user_track', compact('object'))->with('task', 'view')->with('itemkind', 'userlogs');
     }
 
 
