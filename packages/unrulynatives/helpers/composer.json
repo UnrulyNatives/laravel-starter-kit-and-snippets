@@ -1,0 +1,23 @@
+{
+    "name": "unrulynatives/helpers",
+    "description": "Upvote and downvote system for Laravel",
+    "authors": [
+        {
+            "name": "Piotr Plebaniak",
+            "email": "peter.gavagai@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": ">=5.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+
+
+            "Unrulynatives\\Helpers\\": "src"
+
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,161 @@
+@import url(//fonts.googleapis.com/css?family=Eczar:500|Dosis:500|Roboto:300&subset=latin,latin-ext);
+@import 'color_definitions_theme_1.less';
+
+
+
+
+body {
+
+}
+
+
+nav > *, nav > a {
+  text-decoration: none;
+  color: @step3 !important;
+  /*background: red;*/
+  /*height: 1rem;*/
+  padding: .2rem;
+  margin: 0 .5rem;
+  font-size: 80%;
+}
+nav > *:hover{
+  text-decoration: none;
+  color: white;
+}
+nav > * > img{
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.navbar-brand {
+
+    font-size: 1.2rem !important;
+  }
+
+/*inspired  by http://chandraadmin.com/frontend/aboutus*/
+footer .container {
+    /*background-color: #262626;*/
+    margin: 1rem 0px;
+}
+
+
+body {
+
+    font-family: 'Open Sans', sans-serif;
+    color: #757b87;
+    font-size: 1em;
+}
+
+footer h3 {
+    color: #eff2f7;
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: 500;
+}
+footer p {
+    color: #ababab;
+    line-height: 1.5em;
+}
+
+
+footer p a:hover {
+  text-decoration: underline;
+  color: #ddf;
+}
+
+footer p a.item {
+ display: block;
+}
+
+
+
+
+h1 {
+  font-family: Eczar;
+}
+
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+
+.hid, .hide
+{
+    display: none !important;
+}
+
+/*bootstrap dropdown on hover*/
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+  max-width: 24rem;
+}
+
+
+.navbar-brand {
+    color: @step3 !important;
+    font-family: "Eczar";
+    font-weight: 700;
+    letter-spacing: 2px;
+        font-size: 2rem;
+}
+.navbar-brand:hover {
+    color: @step4 !important;
+
+}
+
+// prevents select from with=1px
+.select2
+{
+    min-width: 10rem;
+    max-width: 100%;
+}
+
+
+
+@media screen and (max-width: 55.5em)
+{
+
+
+  nav {
+    display: flex;
+  }
+
+  nav > * {
+    flex: 1 1 auto;
+  }
+  nav  > a {
+    font-size: 1rem!important;
+    padding: .2rem!important;
+    margin: .1rem!important;
+    /*background: red;*/
+    height: 1.5rem;
+  }
+
+  nav  > a {
+    font-size: 1rem!important;
+    padding: .2rem!important;
+    margin: .1rem!important;
+    /*background: red;*/
+    height: 1.5rem;
+  }
+  nav > ul, nav li,   nav  > a:before,nav  > a:after {
+        padding: 0!important;
+    margin: 0!important;
+  }
+
+   nav  > a:before,nav  > a:after {
+        font-size: 1rem!important;
+        height: 1rem!important;
+   }
+  nav img {
+        height: 1rem!important;
+        width: 1rem!important;
+    margin: 0!important;
+    padding: 0!important;
+  }
+}

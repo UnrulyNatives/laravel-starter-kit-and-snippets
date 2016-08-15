@@ -1,0 +1,12 @@
+{
+    "name": "laraveldaily/timezones",
+    "description": "Demo",
+    "authors": [
+        {
+            "name": "Peter",
+            "email": "peter.gavagai@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
