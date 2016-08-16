@@ -236,16 +236,17 @@
     
 </div>
                               
+https://github.com/spatie/geocoder
+       "spatie/geocoder": "^2.1",
 
-       
-        
+        "spatie/laravel-url-signer": "^1.1",        
+https://github.com/spatie/laravel-url-signer
 
+https://github.com/laravel/socialite
+    Laravel\Socialite\SocialiteServiceProvider::class,
 
-
-
-
-
-
+https://github.com/dwightwatson/rememberable
+        "watson/rememberable" : "dev-master",
 
 
 

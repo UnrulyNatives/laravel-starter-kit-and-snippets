@@ -30,16 +30,16 @@
         "barryvdh/laravel-translation-manager": "0.2.x",
         "Amranidev/scaffold-interface": "v1.5.*",
         "arcanedev/log-viewer": "~3.0",
-
-
-
         "spatie/geocoder": "^2.1",
         "spatie/laravel-url-signer": "^1.1",
+        "laravel/socialite": "~2.0",
+        "watson/rememberable" : "dev-master",
+
+
+
         "spatie/laravel-analytics": "^2.1",
         "spatie/laravel-responsecache": "dev-master",
         "unicodeveloper/laravel-password": "1.0.*",
-        "watson/rememberable" : "dev-master",
-        "laravel/socialite": "~2.0",
         "arcanedev/no-captcha": "~2.1",
         "arrilot/laravel-widgets": "dev-master",
         "classygeeks/potion": "dev-master",

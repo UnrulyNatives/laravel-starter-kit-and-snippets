@@ -245,7 +245,14 @@ return [
         // a scaffolding package https://github.com/laralib/l5scaffold
         "Laralib\L5scaffold\GeneratorsServiceProvider",
 
+        // https://github.com/spatie/geocoder
+        'Spatie\Geocoder\GeocoderServiceProvider',
 
+        // https://github.com/spatie/laravel-url-signer
+        Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
+
+        // https://github.com/laravel/socialite
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
 
         Laraveldaily\Timezones\TimezonesServiceProvider::class,
@@ -320,6 +327,12 @@ return [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Date' => Jenssegers\Date\Date::class,
         'Activity' => Spatie\Activitylog\Models\Activity::class,
+
+    'Geocoder' => 'Spatie\Geocoder\GeocoderFacade',
+    'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+
 
         // custom-made helpers
         'dateHelper'=> App\Helpers\DateHelper::class,

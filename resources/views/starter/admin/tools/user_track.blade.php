@@ -70,7 +70,9 @@
 
         <div class="communique-info communique-cleared" id="">
             <h4>Simple example</h4>
-            <p>Just put this line in your controller method:        activity()->log('Feature index opened'); // spatie activity-log</p>
+            <p>
+                Just put this line in your controller method:       <code> activity()->log('Feature index opened'); // spatie activity-log</code>
+            </p>
 
         // success info warning danger cleared dark sm lg // communique-flex
 
