@@ -37,7 +37,7 @@ return [
 	|--------------------------------------------------------------------------
 	*/
 
-	'active' => 'default',
+	'active' => 'bootstrap',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -57,12 +57,18 @@ return [
 
 	'themes' => [
 
-		'default' => [
+		'bootstrap' => [
 			'extends'	 	=> null,
 			'views-path' 	=> '',
 			'asset-path' 	=> '',
 		],
 
+			// ui-kit (universal, for POWER USERS)
+		'semanticui' => [ 
+				'extends'	=> 'bootstrap',
+				'views-path' 	=> 'theme_semanticui',
+				'cssframework'           => 'semanticui', 
+			],
 		// Add your themes here...
 
 		/*--------------[ Example Structre ]-------------

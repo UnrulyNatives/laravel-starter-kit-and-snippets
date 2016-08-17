@@ -25,7 +25,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 // STARTER
 /////////////////////
 // This group would prevend interference of the UN Laravel Starter routes with your own routes
-Route::group(['prefix' => 'starter','middleware' => ['setTheme:Seldon']], function()
+Route::group(['prefix' => 'starter','middleware' => ['setTheme:bootstrap']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
@@ -76,7 +76,7 @@ Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\FeatureController@Del
 // ADMIN WITH PREFIX
 /////////////////////
 
-Route::group(['prefix' => 'admin','middleware' => ['setTheme:DeLaPaz']], function()
+Route::group(['prefix' => 'admin','middleware' => ['setTheme:semanticui']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
@@ -100,7 +100,7 @@ Route::group(['prefix' => 'admin','middleware' => ['setTheme:DeLaPaz']], functio
 // ADMIN WITH NO PREFIX
 /////////////////////
 
-Route::group(['middleware' => ['admins','setTheme:DeLaPaz']], function()
+Route::group(['middleware' => ['admins','setTheme:semanticui']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
@@ -124,7 +124,7 @@ Route::group(['middleware' => ['admins','setTheme:DeLaPaz']], function()
 // ADMIN WITH PREFIX
 /////////////////////
 
-Route::group(['prefix' => 'admin','middleware' => ['setTheme:DeLaPaz']], function()
+Route::group(['prefix' => 'admin','middleware' => ['setTheme:semanticui']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
@@ -169,3 +169,17 @@ Route::group(['middleware' => ['admins','setTheme:DeLaPaz']], function()
     // user roles
     Route::get('experiments/gravatar', 'StarterController@experiments_gravatar');
 
+
+
+
+
+
+Route::get('login/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+
+
+
+
+Route::get('set_theme/{themeName}', 'Starter\UserWorkspacesController@set_theme');

@@ -15,6 +15,18 @@
                 <div class="title m-b-md">
                     UnrulyNatives Laravel Starter Kit
                 </div>
+     <div class="ui green button">
+Current theme: {{ Theme::get() }}</div>
+    <p>Przełącz:
+
+        <a href="{{URL::to('set_theme/bootstrap')}}" title="(bootstrap)">
+          bootstrap
+        </a>
+        <a href="{{URL::to('set_theme/semanticui')}}" title="(semanticui)">
+          semanticui
+        </a>
+  </p>
+
 
                 <div class="links">
                     <a href="{{URL::to('feature')}}">Features</a>

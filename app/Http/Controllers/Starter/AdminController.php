@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Starter;
 
-// use App\Http\Controllers\Controller;
 use Activity;
 use View;
 use App\Http\Requests;
@@ -11,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Lead;
 use App\User;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {

@@ -1,17 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Starter;
 
 use DB;
 use View;
 use Auth;
 use Redirect;
 use Input;
+use Session;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\User;
 use App\Models\ClientUser;
+use App\Http\Controllers\Controller;
+use Theme;
 
 class UserWorkspacesController extends Controller
 {
@@ -143,5 +146,37 @@ class UserWorkspacesController extends Controller
     }
 
 
+    public function set_theme($themeName) {
+
+        // for testing purpose I ignore the variable and hardcode the theme's name
+        // \Theme::set('Seldon'); //  just in case I test both with and without backslash
+        // Theme::set('Seldon');   // as the namespaces in L5 are major pain
+
+        // \Theme::set('Seldon');
+
+        // dd($themeName);
+            Theme::set($themeName);
+        // Is $themeName valid?
+        if (Theme::find($themeName)) {
+            Theme::set($themeName);
+            // Cookie::forever('themeName', $themeName);
+            Session::forget('themeName');
+            Session::put('themeName', $themeName);
+
+            // Cookie::forever('themeName', 'Fawkes')
+
+            return Redirect::back()->withCookie(cookie()->forever('theme-name', $themeName));
+
+            // TO DZIAŁAŁO OK:
+            // return Redirect::to('/')->withCookie(cookie()->forever('themeName', $themeName));
+            // this is the only way I am able to create a cookie. Facade DON'T WORK!
+
+        }
+
+        return Redirect::back();
+         // my error page
+
+
+    }
 
 }

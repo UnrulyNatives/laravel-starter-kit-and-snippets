@@ -2,13 +2,19 @@
 @import 'color_definitions_theme_1.less';
 
 
-
+img.gravatar {
+  width:1.2rem; height:1.2rem
+}
 
 body {
 
 }
 
-
+nav, .nav {
+  min-height: 3rem;
+  /*background: rgba(86,115,129,1)!important;*/
+  border-radius: 0!important;
+}
 nav > *, nav > a {
   text-decoration: none;
   color: @step3 !important;
@@ -17,6 +23,7 @@ nav > *, nav > a {
   padding: .2rem;
   margin: 0 .5rem;
   font-size: 80%;
+  align-self: center;
 }
 nav > *:hover{
   text-decoration: none;
@@ -30,6 +37,23 @@ nav > * > img{
 
     font-size: 1.2rem !important;
   }
+
+.dropdown-header {
+white-space: pre-line;
+}
+.dropdown-item {
+color: #333 !important;
+}
+[class*=csch_dark] .dropdown-menu a, [class*=csch_dark] a.btn {
+    color: #333!important;
+}
+
+.un_qrcode img
+{
+    flex: auto;
+    margin: 1rem;
+}
+
 
 /*inspired  by http://chandraadmin.com/frontend/aboutus*/
 footer .container {
@@ -76,6 +100,12 @@ h1 {
 
 h3 {
   font-size: 1.1rem;
+}
+
+h2 span {
+  font-size: 80%;
+  display: block;
+  text-align: left;
 }
 
 h4 {

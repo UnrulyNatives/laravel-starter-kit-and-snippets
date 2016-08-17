@@ -11,17 +11,21 @@
 ////////////////////////////////
 
 
-
-
-article {
-    padding: 1rem;
-    order: 2;
-  font-size: 1.65rem;
-  text-indent: 1rem;
-  width: 100%;
-  text-align: justify;
-
+img.gravatar {
+  width:2rem; height:2rem
 }
+
+
+article
+{
+    font-size: 1.65rem;
+    width: 100%;
+    padding: 1rem;
+    text-align: justify;
+    text-indent: 1rem;
+    order: 2;
+}
+
 
 
 article > ol, article > ul {
@@ -188,7 +192,7 @@ aside ol a {
 
 
 .un_pageheader {
-    margin: .3rem 0px 0 0px;
+    margin: 0;
     text-align: center;
     border-bottom: 3px solid @normal;
     font-size: 1.6rem
@@ -290,6 +294,25 @@ align-self: center;
 .un_flex > img {
   flex: 1 1 16rem;
 }
+
+.un_flex > h3 {
+  width: 100%
+}
+
+.un_flex > h2 {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.un_flex > .un_presenter2 {
+  flex: 1 2 42rem;
+}
+.un_flex > .un_presenter3 {
+  flex: 1 1 20rem;
+}
+
+
 
 .un_flex > i {
   flex: 1 1 16rem;
@@ -500,6 +523,49 @@ align-self: center;
 }
 
 
+
+
+
+.un_statistic_sm {
+  display: flex !important;
+  width: 24rem;
+  max-width: 100%;
+  flex-direction: row;
+  margin: .1rem 0em;
+  background: @normal;
+  color: @step3;
+  border-radius: 5px;
+  font-size: 1rem;
+  flex: 0 1 auto !important;
+  align-items: center;
+  align-self: center;
+}
+.un_statistic_sm:hover {
+    text-decoration: none
+
+}
+.un_statistic_sm i {
+    color: @step3;
+    margin-right: .5rem;
+
+}
+
+.un_statistic_sm > div {
+  padding: .4rem;
+  flex: 1 1 auto;
+}
+
+.un_statistic_sm > div:last-of-type {
+    background: @normal2;
+    min-width:20%;
+    max-width:30%;
+    flex: 1 1 4rem;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+
 .un_box
 {
     position: relative;
@@ -602,6 +668,20 @@ align-self: center;
 padding: .2rem;
 }
 
+
+.un_user.block {
+  display: flex;
+}
+.un_user.block > *{
+  flex: 1 1 auto;
+}
+
+.un_user.block  div {
+ /*background: red!important;*/
+}
+
+
+
 .un_wrapper {
   margin: 1rem!important;
   border-radius: 10px 0;
@@ -614,13 +694,13 @@ padding: .2rem;
   text-align: center;
 }
 
-.un_presenter2 {
+.un_presenter2, .un_presenter3 {
     background: @cstep3;
     padding-bottom: .5rem;
 }
 
 
-.un_presenter2 h4, .un_presenter2 h3 {
+.un_presenter2 h4, .un_presenter2 h3, .un_presenter3 h4, .un_presenter3 h3 {
   text-align: center;
   padding: .3rem;
   color: @step4;
@@ -628,6 +708,25 @@ padding: .2rem;
       box-shadow: 
      inset 0px 0px 10px 5px rgba(38,31,31,.2)
     , 2px 2px 3px 1px rgba(18,11,11,.3);
+}
+
+
+.un_presenter3 > img{
+    height: 6rem;
+    max-height: 6rem;
+    width: 9rem;
+    max-width: 20%;
+}
+
+.un_count {
+  font-size: 3rem;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  
+}.un_count:after {
+  /*content: "%";*/
+
 }
 
 //////////////////////////////
@@ -723,6 +822,13 @@ background: @step1 !important; /* fallback for old browsers */
     box-shadow: 0 0 5px 0 rgb(204, 204, 204);
 }
 
+.csch_subtle5 {
+
+
+    background: @cstep2;
+    box-shadow: 0 0 5px 0 @cstep3;
+}
+
 .csch_dark1, .un_interwoven {
     background: #485563 !important; /* fallback for old browsers */
     /* background: #485563;  fallback for old browsers */
@@ -755,18 +861,6 @@ background: @step1 !important; /* fallback for old browsers */
     background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: @step4 !important;
 }
-.csch_dark7 {
-    background: rgba(65,63,61,.84);
-    background: -webkit-linear-gradient(to left, rgba(65,63,61,.84) , rgba(65,63,61,.7)); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, rgba(65,63,61,.84) , rgba(65,63,61,.7)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: @step4 !important;
-}
-
-.csch_dark8 {
-    background: #607D8B;
-
-    color: @step4 !important;
-}
 
 // light blue to dark
 .csch_dark5 {
@@ -784,6 +878,23 @@ background: linear-gradient(to left, @normal , @normal2);
 color: @step4 !important;
 
 }
+.csch_dark7 {
+    background: rgba(65,63,61,.84);
+    background: -webkit-linear-gradient(to left, rgba(65,63,61,.84) , rgba(65,63,61,.7)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, rgba(65,63,61,.84) , rgba(65,63,61,.7)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: @step4 !important;
+}
+
+.csch_dark8 {
+    background: #607D8B;
+
+    color: @step4 !important;
+}
+.csch_dark9 {
+    background: rgba(85,115,129,1)!important;
+
+    color: @step4 !important;
+}
 
 [class*="csch_dark"] a
  {
@@ -793,7 +904,7 @@ color: @step4 !important;
 [class*="csch_dark"]  a.btn
  {
     color: #ffe !important;
-    background: #333 !important;
+    /*background: #333 !important;*/
 }
 
 [class*="csch_bright"] a.btn {
@@ -868,6 +979,12 @@ color: @normal !important;
     max-width: 16rem !important;
     min-width: 16rem !important;
 }
+.un_wide20
+{
+    width: 20rem !important;
+    max-width: 20rem !important;
+    min-width: 20rem !important;
+}
 .un_wide24
 {
     width: 24rem !important;
@@ -884,7 +1001,7 @@ color: @normal !important;
 .un_wide16 > a,
 .un_wide16 > button
 {
-    display: block !important;
+    display: block;
 
     width: 100%;
     max-width: 100%;
@@ -901,8 +1018,10 @@ color: @normal !important;
 }
 
 .un_widehalf > div {
-    min-width: 50%;
+    min-width: 45%;
     max-width: 50%
+    margin: 0;
+    padding: 1rem;
 }
 
 .un_widequarted > div {
@@ -957,6 +1076,13 @@ color: @normal !important;
     padding: .3rem;
     font-size: 60%;
 }
+
+
+
+.hide_item, .hidden {
+        display: none !important;
+    }
+
 
 
 .anim_flash
@@ -1251,7 +1377,8 @@ div[class^="communique"] + div[class^="communique"]{
 
 [class^="communique"] h4{
     margin-top:0;
-    margin-bottom:.8rem
+    margin-bottom:.8rem;
+    font-size: 120%;
 }
 [class^="communique"] p:last-child{
     margin-bottom:0
@@ -1284,9 +1411,7 @@ div[class^="communique"] + div[class^="communique"]{
 
 // reworked messagebox from "solved by flexbox"
 .communique-flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+
     display: flex;
     align-items: flex-start;
     margin-bottom: 1rem !important;
@@ -1376,9 +1501,9 @@ form.un_box {
 
 .un_forminput {
     display: flex;
-  
+    /*flex-direction: column;*/
 }
-.un_forminput input{
+.un_forminput input, .un_forminput textarea, textarea.un_forminput {
     width: 100%;
   
 }
@@ -1399,11 +1524,30 @@ form.un_box {
     font-weight: 400;
 }
 
+.un_input_label {
+    border-radius: 5px 5px 0 0;
+    background: @cstep1;
+    width: 100%;
+    padding: .3rem 1rem;
+}
+.un_input_label + div {
+  max-width: 100%;
+  width: 100%;
+}
+
+.un_forminput .select2 {
+  max-width: 90%;
+  min-width: 90%;
+  /*width: 90%!important;*/
+}
+
 label {
   margin: 0;
 }
 
-
+.un_flex_wrap > .un_forminput {
+  margin: 1rem;
+}
 
 
 
@@ -1418,6 +1562,7 @@ label {
   line-height: 135%;
   cursor: pointer;
 }
+
 
 .un_checkbox1 input[type="checkbox"] {
   position: relative;
@@ -1437,6 +1582,7 @@ label {
   height: 1rem;
   border: 2px solid #f2f2f2;
 }
+
 .un_checkbox1 input[type="checkbox"]:checked:before {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1448,6 +1594,7 @@ label {
   border-top-style: none;
   border-right-style: none;
 }
+
 .un_checkbox1 input[type="checkbox"]:after {
   content: "";
   position: absolute;
@@ -1459,6 +1606,7 @@ label {
   cursor: pointer;
 }
 
+
 // un_checkbox2
 .un_checkbox2 input {
   background-color: #fff;
@@ -1467,12 +1615,15 @@ label {
   margin: 0 0.25em;
   width: 50px;
 }
+
 .un_checkbox2 label  {
   display: block;
   height: 50px;
   position: relative;
   width: 50px;
 }
+
+
 .un_checkbox2 label:after {
   /*
   This element has a border on the right, and top. By rotating it looks like a check symbol, but the wrong way. That's why I'm flipping it with scaleX(-1)
@@ -1498,6 +1649,7 @@ label {
   top: 26px;
   width: 10px;
 }
+
 .un_checkbox2 label:hover:after {
   border-color: #bdd;
 }
@@ -2269,12 +2421,12 @@ label {
 
     .un_statistic {
 
-      font-size: 1rem;
-      display: flex;
+      display: flex !important;
       flex-direction: row;
+      background: @normal;
+      font-size: 1rem;
       margin: .1rem 0em;
       max-width: auto;
-      background: @normal;
       border-radius: 5px;
       padding: .4rem;
       width: 100%;
@@ -2300,23 +2452,5 @@ label {
         padding: 0;
     }
 
-
-    .un_statistic_sm {
-
-      font-size: 1rem;
-      display: flex;
-      flex-direction: row;
-      margin: .1rem 0em;
-      max-width: auto;
-      /*background: @normal;*/
-      border-radius: 2px;
-      padding: .4rem;
-      width: 24rem;
- 
-    }
-    .un_statistic_sm:hover {
-        text-decoration: none
-
-    }
 
 }

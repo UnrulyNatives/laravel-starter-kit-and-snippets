@@ -12,6 +12,10 @@
     <body>
         <div class = 'container'>
             <h1>Package Index</h1>
+
+            <div class="communique-info">
+                Descriptions are pasted from the original respective packages.
+            </div>
             <form class = 'col s3' method = 'get' action = '{{url("package")}}/create'>
                 <button class = 'btn btn-primary' type = 'submit'>Create New Package</button>
             </form>
@@ -36,7 +40,9 @@
                         
                         <td>{{$Package->name}}</td>
                         
-                        <td>{{$Package->description}}</td>
+                        <td>What it does: <strong>{{$Package->description_does_what}}</strong>
+                        <p>Description <strong>{{$Package->description}}</strong></p>
+                        </td>
                         
                         <td>{{$Package->string_composer}}</td>
                         
