@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Starter;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Feature;
+use App\Models\Package;
 use Amranidev\Ajaxis\Ajaxis;
 use URL;
 
@@ -35,8 +36,9 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        
-        return view('feature.create');
+        $pac = array(null => 'Typ akcji...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();            
+        return view('feature.create', compact('pac'))
+            ->with('task', 'create')->with('itemkind', 'actions');
     }
 
     /**
@@ -57,6 +59,7 @@ class FeatureController extends Controller
 
         
         $feature->demonstration_URL = $request->demonstration_URL;
+        $feature->package_id = $request->package_id;
 
         
         
@@ -117,7 +120,7 @@ class FeatureController extends Controller
         $feature->description = $request->description;
         
         $feature->demonstration_URL = $request->demonstration_URL;
-        
+        $feature->package_id = $request->package_id;       
         
         $feature->save();
 

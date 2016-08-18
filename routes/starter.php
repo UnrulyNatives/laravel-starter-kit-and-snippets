@@ -56,19 +56,19 @@ Route::group(['prefix' => 'starter','middleware' => ['setTheme:bootstrap']], fun
 
 //package Resources
 /********************* package ***********************************************/
-Route::resource('package','\App\Http\Controllers\PackageController');
-Route::post('package/{id}/update','\App\Http\Controllers\PackageController@update');
-Route::get('package/{id}/delete','\App\Http\Controllers\PackageController@destroy');
-Route::get('package/{id}/deleteMsg','\App\Http\Controllers\PackageController@DeleteMsg');
+Route::resource('package','\App\Http\Controllers\Starter\PackageController');
+Route::post('package/{id}/update','\App\Http\Controllers\Starter\PackageController@update');
+Route::get('package/{id}/delete','\App\Http\Controllers\Starter\PackageController@destroy');
+Route::get('package/{id}/deleteMsg','\App\Http\Controllers\Starter\PackageController@DeleteMsg');
 /********************* package ***********************************************/
 
 
 //feature Resources
 /********************* feature ***********************************************/
-Route::resource('feature','\App\Http\Controllers\FeatureController');
-Route::post('feature/{id}/update','\App\Http\Controllers\FeatureController@update');
-Route::get('feature/{id}/delete','\App\Http\Controllers\FeatureController@destroy');
-Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\FeatureController@DeleteMsg');
+Route::resource('feature','\App\Http\Controllers\Starter\FeatureController');
+Route::post('feature/{id}/update','\App\Http\Controllers\Starter\FeatureController@update');
+Route::get('feature/{id}/delete','\App\Http\Controllers\Starter\FeatureController@destroy');
+Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\Starter\FeatureController@DeleteMsg');
 /********************* feature ***********************************************/
 
 

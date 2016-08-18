@@ -3,7 +3,7 @@
 
 http://dev.unrulynatives.com
 
-A DB-fed list of available features is available in
+A DB-fed list of available features is available here:
 [DEMO app here](http://dev.unrulynatives.com/package)
 
 # What it is
@@ -172,8 +172,20 @@ A DB-fed list is available at the
         See URL `admintools/user-track`
 
 
+# INSTALLATION
 
-## Installation steps
+## Variant 1: Merging into your existing project
+
+Note: all files and changes made to the original Laravel 5.3 laravel app are made in a way allowing you to get rid of some or all functions. 
+
+    - All view files are stored in `starter` folder with exception of
+    - `auth` folder which is created by the native Laravel command `php artisan make:auth`
+
+    - all routes for the Starter functions are placed in `routes/starter.app`. You can comment out the routes in bulk or undegister the route file in `app/Providers/RouteServiceProvider.php`
+
+    - Controllers for the Starter App are stored in subfloder `app/Http/Controllers/Starter`
+
+## Variant 2: Setting up a new app
 
 1. Pull the repository to your local drive
 2. run `composer install`. You have to install the Composer itself to do that. See [Composer Download Page](https://getcomposer.org/download/).

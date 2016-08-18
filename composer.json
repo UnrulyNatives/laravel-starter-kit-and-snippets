@@ -11,12 +11,16 @@
         "laravie/html": "~5.3",
 
 
+        "Amranidev/scaffold-interface": "v1.5.*",
+        "arcanedev/log-viewer": "~3.0",
         "barryvdh/laravel-debugbar": "*",
+        "barryvdh/laravel-translation-manager": "0.2.x",
         "cviebrock/eloquent-sluggable": "dev-master",
         "igaster/laravel-theme": "~1",
         "intervention/image": "dev-develop",
         "jenssegers/agent" : "~2.3",
         "jenssegers/date": "^3.2@dev",
+        "laravel/socialite": "~2.0",
         "rtconner/laravel-likeable" : "1.*",
         "rtconner/laravel-tagging": "2.*",
         "simplesoftwareio/simple-qrcode": "1.*",
@@ -27,12 +31,8 @@
         "spatie/laravel-permission": "1.5.*@dev",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-or-abort": "^1.0",
-        "barryvdh/laravel-translation-manager": "0.2.x",
-        "Amranidev/scaffold-interface": "v1.5.*",
-        "arcanedev/log-viewer": "~3.0",
         "spatie/geocoder": "^2.1",
         "spatie/laravel-url-signer": "^1.1",
-        "laravel/socialite": "~2.0",
         "watson/rememberable" : "dev-master",
 
 

@@ -1,5 +1,6 @@
 <?php
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\Starter;
 
 use DB;
 use Session;
@@ -13,32 +14,12 @@ use Image;
 use Response;
 use Theme;
 use Illuminate\Cookie\CookieJar;
-use Goodby\CSV\Import\Standard\Lexer;
-use Goodby\CSV\Import\Standard\Interpreter;
-use Goodby\CSV\Import\Standard\LexerConfig;
-use App\Models\Userattitude;
-use App\Models\Exemplarattitude;
-use App\Models\Action;
-use App\Models\Entity;
-use App\Models\Exemplar;
-use App\Models\Question;
-use App\Models\Topic;
-use App\Models\Event;
-use App\Models\Country;
-use App\Models\Commodity;
-use App\Models\Ingredient;
-use App\Models\Entitystandpoint;
-use App\Models\Capacitytype;
-use App\Models\Itemtype;
-use App\Models\Taskgroup;
-use App\Models\Widget;
 use App\Models\UserWorkspace;
-use App\Models\Entityrelation;
-use App\Models\Tactic;
+
 use App\Models\Counteraction;
 use Lanz\Commentable\Comment;
 use App\Models\Related;
-use App\Models\Caretaken;
+
 use App\Models\Usersetting;
 use App\Models\Communique;
 use App\Models\Communiquetype;

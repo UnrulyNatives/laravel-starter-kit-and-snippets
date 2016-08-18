@@ -27,6 +27,12 @@
                     <label for="description">description</label>
                     <input id="description" name = "description" type="text" class="form-control" value="{{$feature->description}}">
                 </div>
+
+
+    {{-- field: package_id --}}
+    @include('forms._segment_select', array('purpose' => $task, 'fieldname' => 'package_id', 'fieldlabel' => 'package_id','selectarray' => 'pac','preselected_val' => '', 'icon' => '', 'class' => '' ))
+                
+
                 
                 <div class="form-group">
                     <label for="demonstration_URL">demonstration_URL</label>
