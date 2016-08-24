@@ -5,15 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-use Unrulynatives\Helpers\UserExtensions;
-// use Spatie\Activitylog\Models\Activity; // used for user tranking tool
-
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRoles;
-    use UserExtensions;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -33,9 +28,6 @@ class User extends Authenticatable
     ];
 
 
-
-
-
     public function getGravatarAttribute() {
         $hash = md5(strtolower(trim($this->attributes['email'])));
         return "http://www.gravatar.com/avatar/$hash";
@@ -46,4 +38,5 @@ class User extends Authenticatable
         return $this->hasMany('Activity', 'causer_id');
     }
     
+
 }

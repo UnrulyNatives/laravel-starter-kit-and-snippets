@@ -243,7 +243,7 @@ return [
 
 
         // a scaffolding package https://github.com/laralib/l5scaffold
-        "Laralib\L5scaffold\GeneratorsServiceProvider",
+        // "Laralib\L5scaffold\GeneratorsServiceProvider",
 
         // https://github.com/spatie/geocoder
         'Spatie\Geocoder\GeocoderServiceProvider',
@@ -255,9 +255,9 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
 
 
-        Laraveldaily\Timezones\TimezonesServiceProvider::class,
+        // Laraveldaily\Timezones\TimezonesServiceProvider::class,
         // Unrulynatives packages for developing tests
-        Unrulynatives\Attitudes\AttitudesServiceProvider::class,
+        // Unrulynatives\Attitudes\AttitudesServiceProvider::class,
         Unrulynatives\Helpers\HelpersServiceProvider::class,
 
 

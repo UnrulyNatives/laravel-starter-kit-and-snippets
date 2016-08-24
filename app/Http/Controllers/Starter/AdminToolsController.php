@@ -141,4 +141,37 @@ class AdminToolsController extends Controller
 
     }
 
+
+
+    public function resluggify($itemkind) {
+
+
+        $itemtype = str_singular($itemkind);
+
+        //getting Class name
+        $class_name = ucfirst($itemtype);
+        $name = "App\\Models\\" . $class_name;
+        $class = new $name;
+
+        
+        if (class_exists($name) && get_parent_class($class) == 'Illuminate\Database\Eloquent\Model') {
+            $model = $class->get();
+        }
+
+
+
+
+
+
+
+        foreach ($object as $o) {
+            $o->save();
+        }
+
+        return 'Slugs in model '.$itemkind.' regenerated! Items affected: '.$object->count();
+        // return Redirect::back();
+    }
+
+
+
 }

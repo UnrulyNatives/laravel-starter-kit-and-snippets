@@ -76,11 +76,11 @@ Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\Starter\FeatureContro
 // ADMIN WITH PREFIX
 /////////////////////
 
-Route::group(['prefix' => 'admin','middleware' => ['setTheme:semanticui']], function()
+Route::group(['prefix' => 'admin','middleware' => ['setTheme:semantic']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
-            Route::get('/', '\Starter\AdminController@index');
+            Route::get('/', 'Starter\AdminController@index');
 
 
             Route::get('dashboard-caretaker', 'UserWorkspacesController@dashboard_caretaker');
@@ -100,7 +100,7 @@ Route::group(['prefix' => 'admin','middleware' => ['setTheme:semanticui']], func
 // ADMIN WITH NO PREFIX
 /////////////////////
 
-Route::group(['middleware' => ['admins','setTheme:semanticui']], function()
+Route::group(['middleware' => ['admins','setTheme:semantic']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
@@ -118,29 +118,8 @@ Route::group(['middleware' => ['admins','setTheme:semanticui']], function()
     Route::get('assign_roles_to_Peter', 'AdminToolsController@assign_roles');
 
 
-
-
-/////////////////////
-// ADMIN WITH PREFIX
-/////////////////////
-
-Route::group(['prefix' => 'admin','middleware' => ['setTheme:semanticui']], function()
-{
-    // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
-
-            Route::get('/', 'AdminController@index');
-    Route::get('server-status', 'Starter\AdminToolsController@server_status');
-
-            Route::get('dashboard-caretaker', 'UserWorkspacesController@dashboard_caretaker');
-
-
-        Route::get('dashboard-alerts', 'AdminToolsController@dashboard_alerts');
-        Route::get('dashboard-admintools', 'AdminToolsController@index');
-        Route::get('dashboard-volunteers-caretakers', 'AdminToolsController@dashboard_volunteers_caretakers');
-
-
-
-});
+    Route::get('resluggify/{itemkind}', 'Starter\AdminToolsController@resluggify');
+    Route::get('admin_tool/regenerate_a_slug/{modelname}/{modelid}', 'Starter\AdminToolsPartialsController@regenerate_a_slug');
 
 
 
@@ -148,7 +127,7 @@ Route::group(['prefix' => 'admin','middleware' => ['setTheme:semanticui']], func
 // ADMIN WITH NO PREFIX
 /////////////////////
 
-Route::group(['middleware' => ['admins','setTheme:DeLaPaz']], function()
+Route::group(['middleware' => ['admins','setTheme:uikit']], function()
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
@@ -160,10 +139,6 @@ Route::group(['middleware' => ['admins','setTheme:DeLaPaz']], function()
 
 });
 
-    Route::get('user-track/{userid}', 'AdminToolsController@user_track');
-
-    // user roles
-    Route::get('assign_roles_to_Peter', 'AdminToolsController@assign_roles');
 
 
     // user roles

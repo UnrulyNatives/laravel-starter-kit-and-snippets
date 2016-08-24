@@ -61,13 +61,14 @@ return [
 			'extends'	 	=> null,
 			'views-path' 	=> '',
 			'asset-path' 	=> '',
+			'cssframework'           => 'bootstrap', 			
 		],
 
 			// ui-kit (universal, for POWER USERS)
-		'semanticui' => [ 
+		'semantic' => [ 
 				'extends'	=> 'bootstrap',
-				'views-path' 	=> 'theme_semanticui',
-				'cssframework'           => 'semanticui', 
+				'views-path' 	=> 'theme_semantic',
+				'cssframework'           => 'semantic', 
 			],
 		// Add your themes here...
 

@@ -36,7 +36,7 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        $pac = array(null => 'Typ akcji...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();            
+        $pac = array(null => 'Package providing this feature...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();            
         return view('feature.create', compact('pac'))
             ->with('task', 'create')->with('itemkind', 'actions');
     }
@@ -99,9 +99,9 @@ class FeatureController extends Controller
             return URL::to('feature/'. $id . '/edit');
         }
 
-        
+         $pac = array(null => 'Package providing this feature...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();        
         $feature = Feature::findOrfail($id);
-        return view('feature.edit',compact('feature'  ));
+        return view('feature.edit',compact('feature','pac'));
     }
 
     /**
@@ -120,6 +120,7 @@ class FeatureController extends Controller
         $feature->description = $request->description;
         
         $feature->demonstration_URL = $request->demonstration_URL;
+
         $feature->package_id = $request->package_id;       
         
         $feature->save();
