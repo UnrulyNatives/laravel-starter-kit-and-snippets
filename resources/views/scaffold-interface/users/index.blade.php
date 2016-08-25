@@ -10,7 +10,7 @@
 		<table class = "table table-hover">
 		<thead>
 			<th>Name</th>
-			<th>Email</th>
+			<th>Email/ Gravatar</th>
 			<th>Roles</th>
 			<th>Permissions</th>
 			<th>Actions</th>
@@ -18,8 +18,19 @@
 		<tbody>
 			@foreach($users as $user)
 			<tr>
-				<td>{{$user->name}}</td>
-				<td>{{$user->email}}</td>
+				<td><img src="{{$user->gravatarnew}}" class="gravatar"> {{$user->name}}</td>
+				<td> {{$user->email}}
+
+				| Joined {{ $date = Jenssegers\Date\Date::parse($user->created_at)->diffForHumans()}}
+				| Login count: <span class="label bg-green">-</span>. Last login: <span class="label bg-yellow"> - (-)</span>.
+				| settings: {{ @$user->usersettings->count() }} out of {{ App\Models\Setting::count()}}
+
+				    <a href="{{ URL::to('user/sync_available_settings/'.$user->id) }}" class="ui labeled icon button" target="_blank" title="Syncing all usersettings">
+				      <i class="cogs icon"></i>
+				       Sync-up settings
+				    </a>
+
+				</td>
 				<td>
 				@foreach($user->roles as $role)
 				<small class = 'label bg-blue'>{{$role->name}}</small>

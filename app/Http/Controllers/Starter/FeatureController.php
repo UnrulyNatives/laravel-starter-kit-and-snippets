@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Starter;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Feature;
 use App\Models\Package;
 use Amranidev\Ajaxis\Ajaxis;

@@ -10,7 +10,7 @@
 
         "laravie/html": "~5.3",
 
-        "Amranidev/scaffold-interface": "v1.5.*",
+        "Amranidev/scaffold-interface": "dev-master",
         "arcanedev/log-viewer": "~3.0",
         "barryvdh/laravel-debugbar": "*",
         "barryvdh/laravel-translation-manager": "0.2.x",
@@ -42,7 +42,7 @@
         "arrilot/laravel-widgets": "dev-master",
         "classygeeks/potion": "dev-master",
         "cmgmyr/messenger": "~2.9",
-
+        "doctrine/dbal": "2.4.4",
         "unrulynatives/helpers": "0.0.6"
         
     },

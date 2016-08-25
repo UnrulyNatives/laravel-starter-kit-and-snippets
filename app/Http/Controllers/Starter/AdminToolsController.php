@@ -160,15 +160,11 @@ class AdminToolsController extends Controller
 
 
 
-
-
-
-
-        foreach ($object as $o) {
+        foreach ($model as $o) {
             $o->save();
         }
 
-        return 'Slugs in model '.$itemkind.' regenerated! Items affected: '.$object->count();
+        return 'Slugs in model '.$itemkind.' regenerated! Items affected: '.$model->count();
         // return Redirect::back();
     }
 

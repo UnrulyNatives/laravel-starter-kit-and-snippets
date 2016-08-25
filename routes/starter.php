@@ -33,6 +33,7 @@ Route::group(['prefix' => 'starter','middleware' => ['setTheme:bootstrap']], fun
     Route::get('frontend', function () {
         return view('starter.frontend.components_common');
     });
+    Route::get('initial-setup', 'Starter\StarterController@initial_setup');
     Route::get('features', 'Starter\StarterController@features');
     Route::get('packages', 'Starter\StarterController@packages');
     Route::get('minitools', 'Starter\StarterController@minitools');
@@ -70,6 +71,23 @@ Route::post('feature/{id}/update','\App\Http\Controllers\Starter\FeatureControll
 Route::get('feature/{id}/delete','\App\Http\Controllers\Starter\FeatureController@destroy');
 Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\Starter\FeatureController@DeleteMsg');
 /********************* feature ***********************************************/
+
+//user_setting Resources
+/********************* user_setting ***********************************************/
+Route::resource('user_setting','\App\Http\Controllers\Starter\User_settingController');
+Route::post('user_setting/{id}/update','\App\Http\Controllers\Starter\User_settingController@update');
+Route::get('user_setting/{id}/delete','\App\Http\Controllers\Starter\User_settingController@destroy');
+Route::get('user_setting/{id}/deleteMsg','\App\Http\Controllers\Starter\User_settingController@DeleteMsg');
+/********************* user_setting ***********************************************/
+
+
+//setting Resources
+/********************* setting ***********************************************/
+Route::resource('setting','\App\Http\Controllers\Starter\SettingController');
+Route::post('setting/{id}/update','\App\Http\Controllers\Starter\SettingController@update');
+Route::get('setting/{id}/delete','\App\Http\Controllers\Starter\SettingController@destroy');
+Route::get('setting/{id}/deleteMsg','\App\Http\Controllers\Starter\SettingController@DeleteMsg');
+/********************* setting ***********************************************/
 
 
 /////////////////////
@@ -158,3 +176,13 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 
 
 Route::get('set_theme/{themeName}', 'Starter\UserWorkspacesController@set_theme');
+
+
+/////////////////////
+// user settings management
+/////////////////////
+
+    // sync_available_settings: create records in user_setting table
+    Route::get('user/sync_available_settings/{routineid}', 'Starter\UserWorkspacesController@sync_available_settings');
+
+    Route::get('routine/complete_activity/{routineid}/{activityid}', 'RoutinesController@complete_activity');

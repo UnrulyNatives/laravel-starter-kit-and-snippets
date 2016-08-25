@@ -8,13 +8,14 @@ use Auth;
 use Redirect;
 use Input;
 use Session;
+use Theme;
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Models\Client;
+
 use App\User;
-use App\Models\ClientUser;
+use App\Models\Setting;
+
 use App\Http\Controllers\Controller;
-use Theme;
 
 class UserWorkspacesController extends Controller
 {
@@ -178,5 +179,48 @@ class UserWorkspacesController extends Controller
 
 
     }
+
+
+
+
+
+    public function sync_available_settings($id) {
+
+        $object = User::find($id);
+
+        $usersettings = Setting::pluck('id')->all();
+
+        // dd($activities);
+            $object->usersettings()->sync($usersettings);
+
+        // foreach([1,2,3] as $na) {
+        //     $object->activities()->sync($na, null);
+
+        // }
+
+        $object->save();
+
+        return Redirect::to('routines/'. $id);
+    }
+
+    public function complete_activity($routineid, $activityid) {
+
+        // $date = new \DateTime;
+        // $object = Routine::find($routineid)->activities()->updateExistingPivot($activityid, array('done_at' => $date));
+
+        // http://stackoverflow.com/questions/36809209/manytomany-relation-how-update-attribute-in-pivot-table/36818044#36818044
+        $routine = Routine::find($routineid);
+        $activity = $routine->activities()->find($activityid);
+        $done_at = is_null($activity->pivot->done_at) ? new \DateTime : null;
+
+        $routine->activities()->updateExistingPivot($activityid, compact('done_at'));
+
+
+
+        return 'done!';
+    }
+
+
+
 
 }

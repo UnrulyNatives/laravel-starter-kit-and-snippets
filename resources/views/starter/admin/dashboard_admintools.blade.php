@@ -37,27 +37,20 @@
     <div class="un_box">
     <h3>Resluggify</h3>
 
-    Note: you must manually create a arra-type variable with your model names. Preset convention: lowercase plural to target a model, singular, Firstletteruppercase for class name 
+    Note: you must manually create a array-type variable with your model names. Preset convention: lowercase plural to target a model. Singular, `Firstletteruppercase` for class name.
 
 
     <?php         
-    $models = ['questions','entities','capacitytypes','events','actions','counteractions','tactics','exemplars','topics','commodities','ingredients','countries','entitystandpoints','entityrelations']; 
+
+    // $sluggable_models = ['features','packages'];
     ?>
 
-    AA{{  $models = config('project_specific.sluggable_models') }}BB
+   {{-- {{  print_r(config('project_specific.sluggable_models')) }} --}}
 
+        @foreach(config('project_specific.sluggable_models') as $o)
+            <a href="{{ URL::to('resluggify/'.$o)}}">{{$o}}</a>
+        @endforeach
 
-                    <li><a href="{{ URL::to('resluggify/questions')}}">Pytania</a></li>
-                    <li><a href="{{ URL::to('resluggify/entities')}}">Podmioty</a></li>
-                    <li><a href="{{ URL::to('resluggify/events')}}">Zdarzenia</a></li>
-                    <li><a href="{{ URL::to('resluggify/entitystandpoints')}}">Stanowiska</a></li>
-                    <li><a href="{{ URL::to('resluggify/entityrelations')}}">Relacje</a></li>
-                    <li><a href="{{ URL::to('resluggify/capacitytypes')}}">Capacitytypes</a></li>
-                    <li><a href="{{ URL::to('resluggify/actions')}}">Akcje</a></li>
-                    <li><a href="{{ URL::to('resluggify/counteractions')}}">Kontrakcje</a></li>
-                    <li><a href="{{ URL::to('resluggify/tactics')}}">Taktyki</a></li>
-                    <li><a href="{{ URL::to('resluggify/exemplars')}}">Wzorce</a></li>
-                    <li><a href="{{ URL::to('resluggify/topics')}}">Tematy</a></li>
 
     </div>
 

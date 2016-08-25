@@ -4,6 +4,6 @@ return [
 
 
 
-    'sluggable_models' => ['features','packages'],
+    'sluggable_models' => ['features','packages', 'entities'],
 
 ];

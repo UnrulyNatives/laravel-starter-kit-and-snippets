@@ -5,10 +5,14 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use Unrulynatives\Helpers\UserExtensions;
+
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRoles;
+    use UserExtensions;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -38,5 +42,28 @@ class User extends Authenticatable
         return $this->hasMany('Activity', 'causer_id');
     }
     
+    
+    // public function settings() {
+    //     return $this->hasMany('App\Models\Usersetting', 'user_id');
+    // }
+    
+
+    public function usersettings()
+    {
+
+        return $this->belongsToMany('App\Models\Setting', 'user_settings', 'user_id', 'setting_id')->withTimestamps();
+    }
+
+
+    public function activitiesDone()
+    {
+        // $this->belongsToMany('App\Models\Activity')->withPivot('done_at');
+
+        // return $this->belongsToMany('App\Models\Activity')->withPivot('done_at')->wherePivot('done_at','=', null);
+        return $this->belongsToMany('App\Models\Activity')->withPivot('done_at')->whereNotNull('done_at');
+        // $this->activities()->wherePivot('done_at','=', null)->get();
+
+    }
+
 
 }

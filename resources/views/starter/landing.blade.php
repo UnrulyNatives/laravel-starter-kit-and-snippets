@@ -29,8 +29,9 @@ Current theme: {{ Theme::get() }}</div>
 
 
                 <div class="links">
+                    <a href="{{URL::to('starter/initial-setup')}}">Initial setup</a>
                     <a href="{{URL::to('feature')}}">Features</a>
-                    <a href="{{URL::to('starter/packages')}}">Packages Included</a>
+                    <a href="{{URL::to('starter/packages')}}">Packages</a>
                     <a href="{{URL::to('starter/frontend')}}">Frontend</a>
                     <a href="{{URL::to('starter/minitools')}}">JS & jQuery minitools</a>
                     <a href="{{URL::to('starter/snippets')}}">Snippets</a>

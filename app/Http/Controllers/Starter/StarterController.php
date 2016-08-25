@@ -55,4 +55,9 @@ class StarterController extends Controller
         $object = User::get();
         return view('starter.landing', compact('object'));
     }
+    public function initial_setup()
+    {
+        $object = User::get();
+        return view('starter.initial_setup', compact('object'));
+    }
 }
