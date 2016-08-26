@@ -5,7 +5,7 @@
         @include('layouts.partials.alerts')
 
         <div class="page-header">
-            <h3>Zaloguj się</h3>
+            <h3>Sign In</h3>
         </div>
 
 
@@ -13,7 +13,7 @@
     <div class="un_flex un_flex_hs p-a-1">
        <div class="panel panel-primary un_flex un_flex_vt  m-a-1">
 
-       <h3 class="panel-heading">{{trans('buttons.login_by_')}} Chiny.pl</h3>
+       <h3 class="panel-heading">{{trans('buttons.login_by_')}} UnrulyNatives Starter</h3>
 
        <div class="panel-body" id="form">
 
@@ -27,7 +27,7 @@
                     <div class="un_box un_flex un_flex_vt">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-sm-2 control-label">Email / Użytkownik</label>
+                            <label for="email" class="col-sm-2 control-label">Email / Username</label>
                             <div class="col-sm-8">
                                 <input type="text" name="email" id="email" class="form-control">
                                 @if ($errors->has('email'))
@@ -55,7 +55,7 @@
                             </div>
                             <div class="un_margins1">
 
-                                Nie masz konta?   <a href="{{URL::to('signup')}}" class=""><i class="fa fa-user"></i> {{ trans('buttons.register') }}</a>
+                                No account?   <a href="{{URL::to('signup')}}" class=""><i class="fa fa-user"></i> {{ trans('buttons.register') }}</a>
 
 
                             </div>

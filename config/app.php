@@ -77,8 +77,9 @@ return [
     |
     */
 
-    'locale' => 'en',
-
+    // 'locale' => 'en',
+    'locale' => 'en','pl','es','de','zw-tw',
+    'available_language' => array('en','pl','es','de','zw-tw'), 
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -227,7 +228,7 @@ return [
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
 
         // translations manager
-        // Barryvdh\TranslationManager\ManagerServiceProvider::class,
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
 
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         

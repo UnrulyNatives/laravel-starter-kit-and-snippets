@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Laravel Starter Kit</title>
 
     <!-- Styles -->
     <link href="{{URL::to('css/app.css')}}" rel="stylesheet">
+    <link href="{{URL::to('css/elements_common.css')}}" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -39,7 +40,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('login') }}">Login</a></li>
+                        @if(!Request::is('login*'))
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                        @endif
                         <li><a href="{{ url('register') }}">Register</a></li>
                     @else
                         <li class="dropdown">

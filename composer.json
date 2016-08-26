@@ -13,7 +13,7 @@
         "Amranidev/scaffold-interface": "dev-master",
         "arcanedev/log-viewer": "~3.0",
         "barryvdh/laravel-debugbar": "*",
-        "barryvdh/laravel-translation-manager": "0.2.x",
+        "barryvdh/laravel-translation-manager": "dev-master",
         "cviebrock/eloquent-sluggable": "dev-master",
         "igaster/laravel-theme": "~1",
         "intervention/image": "dev-develop",

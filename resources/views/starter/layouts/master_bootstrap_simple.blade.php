@@ -78,6 +78,9 @@
 
                     <a href="{{URL::to('contributors')}}">For contributors</a>
                     <a href="http://dev.unrulynatives.com">DEMO on-line</a>
+                    <a href="https://github.com/UnrulyNatives/laravel-starter-and-live-snippets">GitHub</a>
+                    <a href="https://github.com/laravel/laravel">Laravel</a>
+
                 @if(Auth::check())
 
                     <a href="{{URL::to('dashboard')}}">Dashboard</a>
@@ -86,6 +89,7 @@
                 @else
 
                     <a href="{{URL::to('login')}}">Login</a>
+                    <a href="{{URL::to('login2')}}" title="Manual, with extra features">Login 2</a>
                     <a href="{{URL::to('register')}}">Register</a>
                 @endif
             </nav>

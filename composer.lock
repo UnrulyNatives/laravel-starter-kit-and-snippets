@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bd40ca28b448929cabfb0cfd7b21bc8a",
-    "content-hash": "00cc57d29fac9fd4c7895d4da027367c",
+    "hash": "2f9373cc1ba5081d3074fddd1bf4f468",
+    "content-hash": "bb46cc425d7a8dfffaeb8b3576b693d5",
     "packages": [
         {
             "name": "amranidev/ajaxis",
@@ -521,16 +521,16 @@
         },
         {
             "name": "barryvdh/laravel-translation-manager",
-            "version": "v0.2.3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-translation-manager.git",
-                "reference": "4e70c9810278424e9477f0b1a7f02cce60a27746"
+                "reference": "369de4616c9036c9157d4694cc65228f844dd579"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-translation-manager/zipball/4e70c9810278424e9477f0b1a7f02cce60a27746",
-                "reference": "4e70c9810278424e9477f0b1a7f02cce60a27746",
+                "url": "https://api.github.com/repos/barryvdh/laravel-translation-manager/zipball/369de4616c9036c9157d4694cc65228f844dd579",
+                "reference": "369de4616c9036c9157d4694cc65228f844dd579",
                 "shasum": ""
             },
             "require": {
@@ -566,7 +566,7 @@
                 "translations",
                 "translator"
             ],
-            "time": "2016-08-17 09:28:00"
+            "time": "2016-08-25 07:22:23"
         },
         {
             "name": "baum/baum",
@@ -7257,6 +7257,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "amranidev/scaffold-interface": 20,
+        "barryvdh/laravel-translation-manager": 20,
         "cviebrock/eloquent-sluggable": 20,
         "intervention/image": 20,
         "jenssegers/date": 20,
