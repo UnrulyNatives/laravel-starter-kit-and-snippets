@@ -32,18 +32,17 @@
         "spatie/geocoder": "^2.1",
         "spatie/laravel-url-signer": "^1.1",
         "watson/rememberable" : "dev-master",
-
-
-
         "spatie/laravel-analytics": "^2.1",
         "spatie/laravel-responsecache": "dev-master",
         "unicodeveloper/laravel-password": "1.0.*",
-        "arcanedev/no-captcha": "~2.1",
+        "arcanedev/no-captcha": "~3.0",
         "arrilot/laravel-widgets": "dev-master",
         "classygeeks/potion": "dev-master",
-        "cmgmyr/messenger": "~2.9",
-        "doctrine/dbal": "2.4.4",
-        "unrulynatives/helpers": "0.0.6"
+        "cmgmyr/messenger": "~2.0",
+        "doctrine/dbal": "2.4.5",
+        "fabpot/goutte": "~3.1",
+
+        "unrulynatives/helpers": "0.0.7"
         
     },
     "require-dev": {

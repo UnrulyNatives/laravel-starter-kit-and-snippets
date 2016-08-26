@@ -11,11 +11,19 @@
 |
 */
 
+
+// example - using functions in routes file
 // Route::get('/', function () {
 //     return view('starter.landing');
 // });
-    Route::get('/', 'Starter\StarterController@landing');
 
+
+// comment this route to make the `/` route in 'web.php' be first to read
+Route::get('/', 'Starter\StarterController@landing');
+
+// manual login: return to initial location, using username and/or email
+Route::get('login2', 'Starter\Auth\AuthController@login2');
+Route::post('login2', 'Starter\Auth\AuthController@authenticate');
 
 Route::get('logout', 'Auth\LoginController@logout');
 

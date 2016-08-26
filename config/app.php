@@ -197,9 +197,9 @@ return [
 
         Intervention\Image\ImageServiceProvider::class,
 
-        'Jenssegers\Agent\AgentServiceProvider',
+        Jenssegers\Agent\AgentServiceProvider::class,
 
-        'Jenssegers\Date\DateServiceProvider',
+        Jenssegers\Date\DateServiceProvider::class,
 
         // package for tags
         // https://github.com/rtconner/laravel-tagging
@@ -246,13 +246,33 @@ return [
         // "Laralib\L5scaffold\GeneratorsServiceProvider",
 
         // https://github.com/spatie/geocoder
-        'Spatie\Geocoder\GeocoderServiceProvider',
+        Spatie\Geocoder\GeocoderServiceProvider::class,
 
         // https://github.com/spatie/laravel-url-signer
         Spatie\UrlSigner\Laravel\UrlSignerServiceProvider::class,
 
+        // https://github.com/spatie/laravel-analytics
+        Spatie\Analytics\AnalyticsServiceProvider::class,
+
+
         // https://github.com/laravel/socialite
         Laravel\Socialite\SocialiteServiceProvider::class,
+
+
+        Spatie\ResponseCache\ResponseCacheServiceProvider::class,
+
+        Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
+
+
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+
+        Arrilot\Widgets\ServiceProvider::class,
+
+        ClassyGeeks\Potion\PotionServiceProvider::class,
+
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
+
+
 
 
         // Laraveldaily\Timezones\TimezonesServiceProvider::class,
@@ -320,19 +340,22 @@ return [
         'Input'     => Illuminate\Support\Facades\Input::class,
         // https://github.com/igaster/laravel-theme
         'Theme' => igaster\laravelTheme\Facades\Theme::class,
-        'Agent' => 'Jenssegers\Agent\Facades\Agent',
-        'Activity' => 'Spatie\Activitylog\ActivitylogFacade',
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
         'Theme' => igaster\laravelTheme\Facades\Theme::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'Date' => Jenssegers\Date\Date::class,
         'Activity' => Spatie\Activitylog\Models\Activity::class,
 
-    'Geocoder' => 'Spatie\Geocoder\GeocoderFacade',
-    'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
-'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
-
+        'Geocoder' => Spatie\Geocoder\GeocoderFacade::class,
+        'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
+        'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
+        'Captcha' => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
+        'Widget'       => Arrilot\Widgets\Facade::class,
+        'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
 
         // custom-made helpers
         'dateHelper'=> App\Helpers\DateHelper::class,

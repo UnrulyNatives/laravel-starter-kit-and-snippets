@@ -6,12 +6,14 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Unrulynatives\Helpers\UserExtensions;
+use Cmgmyr\Messenger\Traits\Messagable;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use HasRoles;
     use UserExtensions;
+    use Messagable;
 
     /**
      * The attributes that are mass assignable.
