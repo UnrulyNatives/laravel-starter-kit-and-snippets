@@ -43,7 +43,7 @@
         "fabpot/goutte": "~3.1",
 
         "unrulynatives/helpers": "0.0.7"
-        
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -58,10 +58,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-
-            "Laraveldaily\\Timezones\\": "packages/laraveldaily/timezones/src",
-            "Unrulynatives\\Helpers\\": "packages/unrulynatives/helpers/src",
-            "Unrulynatives\\Attitudes\\": "packages/unrulynatives/attitudes/src"   
+            "Unstarter\\": "unstarter/"
         }
     },
     "autoload-dev": {

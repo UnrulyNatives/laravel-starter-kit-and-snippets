@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\UNStarter;
+// namespace Unstarter\Http\Controllers\UNStarter;
 
 use Auth;
 use App\Http\Requests;

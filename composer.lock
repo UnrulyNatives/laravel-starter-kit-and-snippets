@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f9373cc1ba5081d3074fddd1bf4f468",
+    "hash": "fc8813fe1b3b19b9762d7ec9c895499e",
     "content-hash": "bb46cc425d7a8dfffaeb8b3576b693d5",
     "packages": [
         {
             "name": "amranidev/ajaxis",
-            "version": "v3.0.4",
+            "version": "v3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amranidev/ajaxis.git",
-                "reference": "086754b9d2c1890bee5b722f2d4d4f4e20ace196"
+                "reference": "5dd95b708c81f9272fca6f974fa823bc6a979107"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amranidev/ajaxis/zipball/086754b9d2c1890bee5b722f2d4d4f4e20ace196",
-                "reference": "086754b9d2c1890bee5b722f2d4d4f4e20ace196",
+                "url": "https://api.github.com/repos/amranidev/ajaxis/zipball/5dd95b708c81f9272fca6f974fa823bc6a979107",
+                "reference": "5dd95b708c81f9272fca6f974fa823bc6a979107",
                 "shasum": ""
             },
             "require": {
@@ -69,7 +69,7 @@
                 "laravel materialize",
                 "laravel modals"
             ],
-            "time": "2016-08-20 17:06:37"
+            "time": "2016-08-27 13:05:06"
         },
         {
             "name": "amranidev/scaffold-interface",
@@ -77,12 +77,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amranidev/scaffold-interface.git",
-                "reference": "6e277ccc3207062dee4ebc55ab913d32b1d60390"
+                "reference": "d322bcb3968565e2c0cc9b77f8a87c1527a5e33b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amranidev/scaffold-interface/zipball/6e277ccc3207062dee4ebc55ab913d32b1d60390",
-                "reference": "6e277ccc3207062dee4ebc55ab913d32b1d60390",
+                "url": "https://api.github.com/repos/amranidev/scaffold-interface/zipball/d322bcb3968565e2c0cc9b77f8a87c1527a5e33b",
+                "reference": "d322bcb3968565e2c0cc9b77f8a87c1527a5e33b",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "smart crud generator",
                 "smart generator"
             ],
-            "time": "2016-08-25 14:15:00"
+            "time": "2016-08-27 13:41:37"
         },
         {
             "name": "anahkiasen/underscore-php",
@@ -255,23 +255,23 @@
         },
         {
             "name": "arcanedev/no-captcha",
-            "version": "3.0.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ARCANEDEV/noCAPTCHA.git",
-                "reference": "b91c46c4c63e46edb80b3b90762f1e297e7a4e38"
+                "reference": "a074595565e4042c04b04c8c4411439e5a33fddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ARCANEDEV/noCAPTCHA/zipball/b91c46c4c63e46edb80b3b90762f1e297e7a4e38",
-                "reference": "b91c46c4c63e46edb80b3b90762f1e297e7a4e38",
+                "url": "https://api.github.com/repos/ARCANEDEV/noCAPTCHA/zipball/a074595565e4042c04b04c8c4411439e5a33fddb",
+                "reference": "a074595565e4042c04b04c8c4411439e5a33fddb",
                 "shasum": ""
             },
             "require": {
                 "arcanedev/support": "~3.0",
                 "ext-curl": "*",
                 "ext-json": "*",
-                "php": ">=5.5.9",
+                "php": ">=5.6",
                 "psr/http-message": "~1.0"
             },
             "require-dev": {
@@ -312,7 +312,7 @@
                 "no-captcha",
                 "recaptcha"
             ],
-            "time": "2016-05-30 16:38:36"
+            "time": "2016-08-27 17:57:45"
         },
         {
             "name": "arcanedev/support",
@@ -861,12 +861,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "f48a3ce1a57a05587f548506ee57568f6905e519"
+                "reference": "981c378500ee2ca12e4143c721a57c8b77ccba33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/f48a3ce1a57a05587f548506ee57568f6905e519",
-                "reference": "f48a3ce1a57a05587f548506ee57568f6905e519",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/981c378500ee2ca12e4143c721a57c8b77ccba33",
+                "reference": "981c378500ee2ca12e4143c721a57c8b77ccba33",
                 "shasum": ""
             },
             "require": {
@@ -904,7 +904,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2016-08-24 20:17:47"
+            "time": "2016-08-28 00:45:43"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2265,16 +2265,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.2",
+            "version": "v5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2213ca11f6fa849ca7c96308934cc6881ab434e8"
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2213ca11f6fa849ca7c96308934cc6881ab434e8",
-                "reference": "2213ca11f6fa849ca7c96308934cc6881ab434e8",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
                 "shasum": ""
             },
             "require": {
@@ -2388,7 +2388,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-24 23:23:29"
+            "time": "2016-08-26 21:40:26"
         },
         {
             "name": "laravel/socialite",

@@ -1,11 +1,11 @@
-@extends('starter.layouts.master_bootstrap_simple')
+@extends('unstarter.layouts.master_bootstrap_simple')
 
 
 
 @section('sidebar')
     @parent
 
-    <a href="{{URL::to('starter/admintools')}}">Admin Tools</a>
+    <a href="{{URL::to('unstarter/admintools')}}">Admin Tools</a>
 @endsection
 
 

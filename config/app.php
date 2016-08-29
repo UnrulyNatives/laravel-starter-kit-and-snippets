@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'My Application',
+    'name' => 'UN Starter Kit',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,6 +80,7 @@ return [
     // 'locale' => 'en',
     'locale' => 'en','pl','es','de','zw-tw',
     'available_language' => array('en','pl','es','de','zw-tw'), 
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -168,14 +169,18 @@ return [
          * Package Service Providers...
          */
 
+        //
+
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+
 
 
         // https://github.com/laravie/html/tree/5.3
@@ -366,8 +371,6 @@ return [
         'avatarHelper'=> App\Helpers\AvatarHelper::class,
         'standpointHelper'=> App\Helpers\StandpointHelper::class,
         'isActive'=> App\Helpers\ActiveIfRequest::class,
-
-
     ],
 
 ];

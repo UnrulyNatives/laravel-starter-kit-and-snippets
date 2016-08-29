@@ -53,8 +53,11 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
+
         'admins' => \App\Http\Middleware\AllowAdmins::class,
+        'moderators' => \App\Http\Middleware\AllowModerators::class,
         'developers' => \App\Http\Middleware\AllowDevelopers::class,
         'setTheme' => \igaster\laravelTheme\Middleware\setTheme::class,
+
     ];
 }

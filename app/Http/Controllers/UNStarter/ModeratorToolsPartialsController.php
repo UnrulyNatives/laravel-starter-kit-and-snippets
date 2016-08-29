@@ -14,22 +14,22 @@ use Image;
 use Response;
 use Theme;
 use Illuminate\Cookie\CookieJar;
-use App\Models\UserWorkspace;
 
-use App\Models\Counteraction;
-use Lanz\Commentable\Comment;
-use App\Models\Related;
-
-use App\Models\Usersetting;
+use App\User;
+use App\Models\Changelog;
 use App\Models\Communique;
 use App\Models\Communiquetype;
-use App\Models\Changelog;
-use App\Models\Sitestat;
-use App\User;
-use App\Models\Role;
 use App\Models\Electoralcandidate;
+use App\Models\Related;
+use App\Models\Role;
+use App\Models\Sitestat;
+use App\Models\Usersetting;
+use App\Models\UserWorkspace;
 
+use Lanz\Commentable\Comment;
 use Sunra\PhpSimple\HtmlDomParser;
+
+use App\Http\Controllers\Controller;
 
 class ModeratorToolsPartialsController extends Controller
 {

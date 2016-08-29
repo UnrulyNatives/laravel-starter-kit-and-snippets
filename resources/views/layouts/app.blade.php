@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel Starter Kit</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Laravel</title>
 
     <!-- Styles -->
-    <link href="{{URL::to('css/app.css')}}" rel="stylesheet">
-    <link href="{{URL::to('css/elements_common.css')}}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -26,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel Starter Kit
+                    Laravel
                 </a>
             </div>
 
@@ -40,10 +49,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        @if(!Request::is('login*'))
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                        @endif
-                        <li><a href="{{ url('register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -58,7 +65,7 @@
                                         Logout
                                     </a>
 
-                                    <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
@@ -73,6 +80,6 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="{{URL::to('js/app.js')}}"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

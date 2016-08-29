@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 use Redirect;
-class AllowAdmins {
+class AllowModerators {
 
     /**
     * Handle an incoming request.
@@ -15,7 +15,7 @@ class AllowAdmins {
     */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->hasRole("Admin")) {
+        if (Auth::check() && Auth::user()->hasRole("Moderator")) {
         return $next($request);
         }
         return redirect('login');

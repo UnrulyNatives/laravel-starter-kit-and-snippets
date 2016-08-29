@@ -71,7 +71,51 @@
     </div>
 
 
+<article>
+  
+<ol>
+    <li>Copy the Starter routes: They are in folder `/unstarter`. Make sure to declare the file in your `\app\Providers\RouteServiceProvider.php`.</li>
 
+
+    <li>Copy views. `/resources/views/unstarter`</li>
+
+    <li>Copy Controllers</li>
+
+    <li>Copy Models</li>
+
+    <li>Copy Middlewares and and register them in `\app\Http\Kernel.php`</li>
+
+    
+    <li>Copy commands and Kernel declarations</li>
+
+    
+    <li>Copy Helpers</li>
+
+    
+    <li>Copy composer.json packages, adjust the minimum stability and declare new installed packages in `config.app`</li>
+
+    <li>Only now you can make migrations</li>
+    
+    <li>Only now you can `php artisan migrate`</li>
+
+
+    <li>Copy `config/project-specific.php`</li>
+
+
+
+    <li>Copy language files (optional, you can generate them from fresh). VItal is the DB content - did yo make translations online or locally?</li>
+
+
+    <li>Copy from production folders with files in `public/` folder</li>
+    <li>Copy CSS and JS folders in `public/`</li>
+
+    <li>Add extra code to config/database.php (`https://github.com/laravel/framework/issues/14908`)</li>
+    <li>Upgrade User model with all extensions from the source instance</li>
+    <li></li>
+</ol>
+
+
+</article>
 
 @stop
 

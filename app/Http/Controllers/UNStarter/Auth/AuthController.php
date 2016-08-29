@@ -18,7 +18,7 @@ class AuthController extends Controller
         $returnURL = Input::get('returnURL');
         $title = "Login";
         $task = "docs";
-        return View::make('starter/auth/login2',compact('returnURL'))->with('title', $title);
+        return View::make('unstarter/auth/login2',compact('returnURL'))->with('title', $title);
 
     }
 
