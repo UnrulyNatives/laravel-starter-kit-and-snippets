@@ -22,6 +22,13 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 
 
+Route::get('login/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+
+
+
 /////////////////////
 // STARTER
 /////////////////////
@@ -37,6 +44,7 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
     Route::get('initial-setup', 'UNStarter\StarterController@initial_setup');
     Route::get('features', 'UNStarter\StarterController@features');
     Route::get('packages', 'UNStarter\StarterController@packages');
+    Route::get('contributors', 'UNStarter\StarterController@contributors');
     Route::get('minitools', 'UNStarter\StarterController@minitools');
     Route::get('snippets', 'UNStarter\StarterController@snippets');
     Route::get('landing', 'UNStarter\StarterController@landing');
@@ -163,13 +171,6 @@ Route::group(['middleware' => ['admins','setTheme:uikit']], function()
     Route::get('experiments/gravatar', 'UNStarter/StarterController@experiments_gravatar');
 
 
-
-
-
-
-Route::get('login/{provider}', 'Auth\AuthController@redirectToProvider');
-Route::get('login/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
-Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 
 

@@ -64,7 +64,7 @@ return [
 			'cssframework'           => 'bootstrap', 			
 		],
 
-			// ui-kit (universal, for POWER USERS)
+			//  
 		'semantic' => [ 
 				'extends'	=> 'bootstrap',
 				'views-path' 	=> 'theme_semantic',

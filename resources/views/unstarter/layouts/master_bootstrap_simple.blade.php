@@ -76,14 +76,14 @@
                     <a href="{{URL::to('/')}}">Start</a>
             @show
 
-                    <a href="{{URL::to('contributors')}}">For contributors</a>
+                    <a href="{{URL::to('unstarter/contributors')}}">For contributors</a>
                     <a href="http://dev.unrulynatives.com">DEMO on-line</a>
                     <a href="https://github.com/UnrulyNatives/laravel-starter-and-live-snippets">GitHub</a>
                     <a href="https://github.com/laravel/laravel">Laravel</a>
 
                 @if(Auth::check())
 
-                    <a href="{{URL::to('dashboard')}}">Dashboard</a>
+                    <a href="{{URL::to('dashboard')}}">Dashboard (LTM)</a>
                     <a href="{{URL::to('unstarter/admin')}}">Admin</a>
                     <a href="{{URL::to('logout')}}">Logout</a>
                 @else

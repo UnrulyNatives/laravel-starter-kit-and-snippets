@@ -61,4 +61,9 @@ class StarterController extends Controller
         $object = User::get();
         return view('unstarter.initial_setup', compact('object'));
     }
+    public function contributors()
+    {
+        $object = User::get();
+        return view('unstarter.contributors', compact('object'));
+    }
 }

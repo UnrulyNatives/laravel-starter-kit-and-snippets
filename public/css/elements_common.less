@@ -481,7 +481,14 @@ align-self: center;
 }
 
 
+nav > a, nav > button, .un_nav > * {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  border: 0;
+    box-shadow: 
+     inset 0px 0px 10px 5px rgba(38,31,31,.2)
+    , 2px 2px 3px 1px rgba(18,11,11,.3);
 
+}
 
 
 .un_statistic:hover {
@@ -571,7 +578,7 @@ align-self: center;
     position: relative;
     display: block;
     margin: 1rem;
-    padding: 1rem;
+    /*padding: 1rem;*/
 
 
     flex: 1 1 40rem;
@@ -899,6 +906,7 @@ color: @step4 !important;
 [class*="csch_dark"] a:not(.item)
  {
     color: #ffe !important;
+    background: @cstep3;
 }
 
 [class*="csch_dark"]  a.btn
