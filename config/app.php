@@ -183,9 +183,7 @@ return [
 
 
 
-        // https://github.com/laravie/html/tree/5.3
         Collective\Html\HtmlServiceProvider::class,
-
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
@@ -281,11 +279,10 @@ return [
 
 
 
-        // Laraveldaily\Timezones\TimezonesServiceProvider::class,
         // Unrulynatives packages for developing tests
+        // Laraveldaily\Timezones\TimezonesServiceProvider::class,
         // Unrulynatives\Attitudes\AttitudesServiceProvider::class,
-        Unrulynatives\Helpers\HelpersServiceProvider::class,
-
+        // Unrulynatives\Helpers\HelpersServiceProvider::class,
 
     ],
 
@@ -335,6 +332,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
 
+
         // here start classes for extra packages
         // sorted alphabetically
 
@@ -371,6 +369,10 @@ return [
         'avatarHelper'=> App\Helpers\AvatarHelper::class,
         'standpointHelper'=> App\Helpers\StandpointHelper::class,
         'isActive'=> App\Helpers\ActiveIfRequest::class,
+
+
+
+
     ],
 
 ];

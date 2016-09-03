@@ -8,7 +8,8 @@
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
 
-        "laravie/html": "~5.3",
+
+        "laravelcollective/html": "5.3.x-dev",
 
         "Amranidev/scaffold-interface": "dev-master",
         "arcanedev/log-viewer": "~3.0",
@@ -42,8 +43,10 @@
         "doctrine/dbal": "2.4.5",
         "fabpot/goutte": "~3.1",
 
-        "unrulynatives/helpers": "0.0.8"
-
+        "unrulynatives/helpers": "0.0.13",
+        "unrulynatives/attitudes": "dev-master"
+    
+    
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -57,8 +60,7 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/",
-            "Unstarter\\": "unstarter/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {

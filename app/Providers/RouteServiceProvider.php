@@ -36,30 +36,14 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapWebRoutes();
+
         $this->mapUnstarterRoutes();
-      
 
         $this->mapApiRoutes();
 
         //
     }
 
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapUnstarterRoutes()
-    {
-        Route::group([
-            'middleware' => 'web',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('unstarter/routes/unstarter.php');
-        });
-    }
     /**
      * Define the "web" routes for the application.
      *
@@ -94,4 +78,16 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+
+    protected function mapUnstarterRoutes()
+    {
+        Route::group([
+            'middleware' => 'web',
+            'namespace' => $this->namespace,
+        ], function ($router) {
+            require base_path('unstarter/routes/unstarter.php');
+        });
+    }
+
+
 }

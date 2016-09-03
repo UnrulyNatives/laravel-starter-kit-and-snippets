@@ -37,6 +37,7 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
 {
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
+    Route::get('/', 'UNStarter\StarterController@landing');
 
     Route::get('frontend', function () {
         return view('unstarter.frontend.components_common');
@@ -57,6 +58,8 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
 
 
     Route::get('admintools/assign-roles/{user?}/{role?}', 'UNStarter\AdminToolsController@assign_roles');
+
+    Route::get('admintools/regenerate-model-name/{modelname?}', 'UNStarter\AdminToolsController@regenerate_model_name');
 
 
 

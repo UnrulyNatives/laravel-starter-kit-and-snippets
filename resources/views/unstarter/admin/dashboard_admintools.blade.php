@@ -16,7 +16,7 @@
 
 <div class="content un_flex un_flex_vt">
     <h3 class="">
-        Admin Tools Dashboard
+        Admin Tools Dashboard 2
     </h3>
 
     <div class="un_box links">
@@ -32,6 +32,8 @@
 
 
         <a href="{{URL::to('users')}}" title="powered by spatie/permissions, included in Admin panel in package Amranidev\ScaffoldInterface">assign_roles</a>
+
+        <a href="{{URL::to('unstarter/admintools/regenerate-model-name')}}" title="powered by fabpot/goutte, included in Admin panel in package Amranidev\ScaffoldInterface">regenerate-model-name</a>
 
 
     </div>

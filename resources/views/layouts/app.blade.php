@@ -8,10 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{URL::to('css/app.css')}}" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -35,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
 
@@ -80,6 +80,6 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="{{URL::to('js/app.js')}}"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

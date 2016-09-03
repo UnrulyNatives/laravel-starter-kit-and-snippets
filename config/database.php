@@ -52,6 +52,7 @@ return [
             'prefix' => '',
         ],
 
+
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
@@ -59,6 +60,32 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            // 'strict' => true,
+            // 'engine' => null,
+
+            // https://github.com/laravel/framework/issues/14908
+            'strict' => true,
+            'engine' => null,
+            'modes' => [
+            //'ONLY_FULL_GROUP_BY',
+            'STRICT_TRANS_TABLES',
+            'NO_ZERO_IN_DATE',
+            'NO_ZERO_DATE',
+            'ERROR_FOR_DIVISION_BY_ZERO',
+            'NO_AUTO_CREATE_USER',
+            'NO_ENGINE_SUBSTITUTION'],
+        ],
+
+        'niepozwalam' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE_NP', 'forge'),
+            'username' => env('DB_USERNAME_NP', 'forge'),
+            'password' => env('DB_PASSWORD_NP', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

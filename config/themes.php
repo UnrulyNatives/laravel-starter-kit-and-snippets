@@ -37,7 +37,7 @@ return [
 	|--------------------------------------------------------------------------
 	*/
 
-	'active' => 'bootstrap',
+	'active' => 'default',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -57,19 +57,12 @@ return [
 
 	'themes' => [
 
-		'bootstrap' => [
+		'default' => [
 			'extends'	 	=> null,
 			'views-path' 	=> '',
 			'asset-path' 	=> '',
-			'cssframework'           => 'bootstrap', 			
 		],
 
-			//  
-		'semantic' => [ 
-				'extends'	=> 'bootstrap',
-				'views-path' 	=> 'theme_semantic',
-				'cssframework'           => 'semantic', 
-			],
 		// Add your themes here...
 
 		/*--------------[ Example Structre ]-------------

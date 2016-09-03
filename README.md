@@ -6,6 +6,8 @@ http://dev.unrulynatives.com
 A DB-fed list of available features is available here:
 [DEMO app here](http://dev.unrulynatives.com/package)
 
+The current version of this package is 0.3.
+
 # What it is
 1. This is an instance of Laravel PHP Framework 5.3. A starter app. Its philosophy is slightly different than similar starter kits. Here are the highlights:
 
@@ -54,7 +56,7 @@ A complete, DB fed list of implemented and future features is avalable at the [D
 
 
 
-## Admin-oriented tools
+## Admin  tools
 
     - Mass removal of records with field `status` == `null`. Easily adjustable for other purposes.
 
@@ -69,7 +71,7 @@ A complete, DB fed list of implemented and future features is avalable at the [D
 
     - permission system provided by `spatie/laravel-permission`.
 
-## Develpler-oriented tools and features
+## Develpler tools and features
 
     - Laravel debugbar
     - A very handy scaffolding interface, DB-powered. `Amranidev/scaffold-interface`.
@@ -188,9 +190,13 @@ Note: all files and changes made to the original Laravel 5.3 laravel app are mad
 ## Variant 2: Setting up a new app
 
 1. Pull the repository to your local drive
-2. run `composer install`. You have to install the Composer itself to do that. See [Composer Download Page](https://getcomposer.org/download/).
+
+2. run `composer install`. You need to install the Composer itself to do that. See [Composer Download Page](https://getcomposer.org/download/).
+
 3. Generate application key with shell command `artisan key:generate`
+
 4. clone the file `.env.example` and rename it to `.env`
+
 5. Create and populate the database. Make sure that 
 - you would place the DB credentials to the `.env` file 
     DB_CONNECTION=mysql // this is the default mysql database connection. You can define extra connections later.
@@ -203,7 +209,7 @@ Note: all files and changes made to the original Laravel 5.3 laravel app are mad
 6. Initiate the Laravel's bundled authentication functions. As described here
 use `php artisan make:auth` commmand. 
 
-You would also need to create tables in your database. Use `php artisan migrate` to do that.
+You will also need to create tables in your database. Use `php artisan migrate` to do that.
 
 
 ### LAST STEP
@@ -211,6 +217,50 @@ After completing the above steps the app should work.
 Point your browser to the `localhost/APP_FOLDER/public/`.. You should see the landing page. (This solution required DB connection to work properly)
 Point your browser to the `localhost/APP_FOLDER/public/welcome`.. You should see the landing page. (You will see the standard welcome screen delivered by Laravel)
 
+
+## integrating this package with bare Laravel app
+
+This starter is designed to work alongside the bare Laravel app with as few modifications to the "blank" app as possible. The reason is simple: ssometimes new versions of the Laravel come with changes to the app structure.
+
+The majority of the files are copied by the `unrulynatives/helpers` package. Below are the 
+
+- Copy middlewares from `app/Http/Middleware` and register them in the `\app\Http\Kernel.php` field.
+
+- Copy `app/Helpers` and `app\Models`.
+
+- Copy `\config\project_specific.php` file to target app's `config\` folder.
+
+- Optional. THe newest changes to MySQL 5.7 produce some annoying problems with the app. This is how to avoid them. Modify the DB connection definition with this:
+
+```
+        'mysql' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            // 'strict' => true,
+            // 'engine' => null,
+
+            // https://github.com/laravel/framework/issues/14908
+            'strict' => true,
+            'engine' => null,
+            'modes' => [
+            //'ONLY_FULL_GROUP_BY',
+            'STRICT_TRANS_TABLES',
+            'NO_ZERO_IN_DATE',
+            'NO_ZERO_DATE',
+            'ERROR_FOR_DIVISION_BY_ZERO',
+            'NO_AUTO_CREATE_USER',
+            'NO_ENGINE_SUBSTITUTION'],
+        ],
+```
+
+- 
 
 
 ## Contribution guide

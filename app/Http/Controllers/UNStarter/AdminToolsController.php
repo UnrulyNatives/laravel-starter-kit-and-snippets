@@ -170,6 +170,115 @@ class AdminToolsController extends Controller
 
 
 
+    public function regenerate_model_name($itemkind='relateds') {
+
+        //get from URL variables
+        $field2change = 'name';
+        $matchcontent = Input::get('matchcontent');
+        $newcontent = Input::get('newcontent');
+
+        if(!isset($matchcontent)) {
+            $matchcontent = 'bb';
+        }
+        if(!isset($newcontent)) {
+            $newcontent = 'ccc';
+        }
+
+
+        $itemtype = str_singular($itemkind);
+
+        //getting Class name
+        $class_name = ucfirst($itemtype);
+        $name = "App\\Models\\" . $class_name;
+        $class = new $name;
+
+
+
+
+        
+        if (class_exists($name) && get_parent_class($class) == 'Illuminate\Database\Eloquent\Model') {
+            $model = $class->where($field2change,$matchcontent)
+                ->get();
+
+            // the action itself:
+            $itemstobeactedupon = $class->where($field2change,$matchcontent)->count();
+            // $itemstobeacteduponbefore = \App\Models\Related::where('name','')->count();
+
+
+
+
+            $acteduponarray = $class->where($field2change,$matchcontent)
+                // ->limit(20)
+                ->pluck('id');
+            $affected = $acteduponarray->count();
+
+            // doing the job!
+            $perform = Input::get('perform');
+            if(isset($perform) && $perform==1) {
+
+                // the action itself:
+                $itemstobeacteduponbefore = $class->where($field2change,$matchcontent)->count();
+                // $actedupon = $class->destroy($acteduponarray);
+                $objects = $class->whereIn('id', $acteduponarray)
+                    // ->limit(20)
+                    ->get(); 
+
+
+                echo "List of items changed: <br>";
+                foreach($objects as $o) {
+
+
+                    // if possible, retrieve page title and use it as event name
+                    $page_url = $o->URL;
+                    try {
+
+                        // Revel's privete function, now a helper
+                        // $page_title = $this->_get_url_title($page_url);
+                        $page_title = \App\Helpers\SitewideHelper::parseTitle($page_url);
+                        // dd($page_title);
+                    } catch(ErrorException $e) {
+                        return Redirect::back()->withInput()->withErrors(['error accessing url']);
+                         // TO DO: fix error msg
+                    }
+                    // hot fix for L5.3 BB #952
+                    $page_title2 = substr($page_title,0,150).'...';
+
+                    echo $page_title;
+
+                    if(isset($page_title2) && $page_title2 !='') {
+                        $o->name = $page_title2;
+                        
+                    } else {
+                        $o->name = '';
+                        
+                    }
+                    $o->save();
+                    echo 'Changed: '.$o->id.'<br>';
+                    echo $o->URL;
+
+                }
+
+
+                $itemstobeacteduponafter = $class->where('name',$matchcontent)->count();
+
+                // $affected = count($acteduponarray);
+            }
+
+        }
+
+        // foreach ($model as $o) {
+        //     $o->save();
+        // }
+
+
+        return View::make('unstarter.admin.tools.regenerate_model_name', compact('object','model','itemstobeactedupon','itemstobeacteduponbefore','itemstobeacteduponafter','class','field2change','matchcontent','newcontent','perform','affected','acteduponarray'))->with('task', 'view')->with('itemkind', 'userlogs');
+
+        // return 'Slugs in model '.$itemkind.' regenerated! Items affected: '.$model->count();
+        // return Redirect::back();
+    }
+
+
+
     public function server_status() {
 
 
