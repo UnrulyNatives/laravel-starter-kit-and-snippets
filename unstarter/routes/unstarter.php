@@ -7,6 +7,10 @@
 // comment this route to make the `/` route in 'web.php' be first to read
 Route::get('/', 'UNStarter\StarterController@landing');
 
+// referred to in help.md
+Route::get('unrulyhelpers', 'UNStarter\StarterController@landing');
+
+
 // example - using functions in routes file
 // Route::get('/', function () {
 //     return view('starter.landing');
@@ -38,6 +42,7 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
     // http://laravel.io/forum/02-17-2015-laravel-5-routes-restricting-based-on-user-type
 
     Route::get('/', 'UNStarter\StarterController@landing');
+    Route::get('landing', 'UNStarter\StarterController@landing');
 
     Route::get('frontend', function () {
         return view('unstarter.frontend.components_common');
@@ -48,7 +53,6 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
     Route::get('contributors', 'UNStarter\StarterController@contributors');
     Route::get('minitools', 'UNStarter\StarterController@minitools');
     Route::get('snippets', 'UNStarter\StarterController@snippets');
-    Route::get('landing', 'UNStarter\StarterController@landing');
     Route::get('admintools', 'UNStarter\AdminToolsController@dashboard_admintools');
 
 

@@ -26,7 +26,7 @@ class FeatureController extends Controller
     {
         $features = Feature::all();
         activity()->log('Feature index opened'); // spatie activity-log
-        return view('feature.index',compact('features'));
+        return view('unstarter.feature.index',compact('features'));
     }
 
     /**
@@ -37,7 +37,7 @@ class FeatureController extends Controller
     public function create()
     {
         $pac = array(null => 'Package providing this feature...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();            
-        return view('feature.create', compact('pac'))
+        return view('unstarter.feature.create', compact('pac'))
             ->with('task', 'create')->with('itemkind', 'actions');
     }
 
@@ -83,7 +83,7 @@ class FeatureController extends Controller
         }
 
         $feature = Feature::findOrfail($id);
-        return view('feature.show',compact('feature'));
+        return view('unstarter.feature.show',compact('feature'));
     }
 
     /**
@@ -101,7 +101,7 @@ class FeatureController extends Controller
 
          $pac = array(null => 'Package providing this feature...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();        
         $feature = Feature::findOrfail($id);
-        return view('feature.edit',compact('feature','pac'));
+        return view('unstarter.feature.edit',compact('feature','pac'));
     }
 
     /**

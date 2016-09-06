@@ -199,7 +199,7 @@ return [
         igaster\laravelTheme\themeServiceProvider::class,
 
 
-        Intervention\Image\ImageServiceProvider::class,
+        // Intervention\Image\ImageServiceProvider::class,
 
         Jenssegers\Agent\AgentServiceProvider::class,
 
@@ -281,7 +281,7 @@ return [
 
         // Unrulynatives packages for developing tests
         // Laraveldaily\Timezones\TimezonesServiceProvider::class,
-        // Unrulynatives\Attitudes\AttitudesServiceProvider::class,
+        Unrulynatives\Attitudes\AttitudesServiceProvider::class,
         Unrulynatives\Helpers\HelpersServiceProvider::class,
 
     ],

@@ -2,10 +2,15 @@ This is a starter kit designed to work just alongside a fresh or old Laravel 5.3
 - All routes have `unstarter` prefix to avoid conflicts with your development work.
 
 There are only few convergence points which interfere with the app. These points are 
-- a route file registered in your `app\Providers\RouteServiceProvider.php`
-- package service providers and facadae declared in your `config/app/php`.
-- User Trait declared in the `app?user.php` model
-- some of the dependencies, such as `"Amranidev/scaffold-interface` have their own routes declared (`users`, `admin` in case of this one). One way of dealing with such conflicts is to move `App\Providers\RouteServiceProvider::class,` to position below the package service provide declaration.
+
+- A route file registered in your `app\Providers\RouteServiceProvider.php`. The file is provided in the `unrulynatives/helpers` package, you need to publish it (see the package's readme.md).
+
+- Package service providers and facadae declared in your `config/app.php`. THe packages are registered out-of-the-box. Don't want a package? Just comment out the service provider and delete the package from `composer.json`.
+
+- Traits declared in the `app/User.php` model. Among them `use Unrulynatives\Helpers\UserExtensions;`.
+
+- some of the dependencies, such as `"Amranidev/scaffold-interface` have their own routes defined not in routes file, but in the package itself (`users`, `admin` in case of this one). 
+One way of dealing with such conflicts is to move `App\Providers\RouteServiceProvider::class,` to position below the package service provide declaration.
 
 
 
@@ -16,7 +21,7 @@ http://dev.unrulynatives.com
 A DB-fed list of available features is available here:
 [DEMO app here](http://dev.unrulynatives.com/package)
 
-The current version of this package is 0.3.1
+The current version of this package is 0.3.3
 
 # What it is
 1. This is an instance of Laravel PHP Framework 5.3. A starter app. Its philosophy is slightly different than similar starter kits. Here are the highlights:

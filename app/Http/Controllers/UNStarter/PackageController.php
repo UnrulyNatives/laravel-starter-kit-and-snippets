@@ -24,7 +24,7 @@ class PackageController extends Controller
     public function index()
     {
         $packages = Package::all();
-        return view('package.index',compact('packages'));
+        return view('unstarter.package.index',compact('packages'));
     }
 
     /**
@@ -35,7 +35,7 @@ class PackageController extends Controller
     public function create()
     {
         
-        return view('package.create');
+        return view('unstarter.package.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class PackageController extends Controller
         }
 
         $package = Package::findOrfail($id);
-        return view('package.show',compact('package'));
+        return view('unstarter.package.show',compact('package'));
     }
 
     /**
@@ -100,7 +100,7 @@ class PackageController extends Controller
 
         
         $package = Package::findOrfail($id);
-        return view('package.edit',compact('package'  ));
+        return view('unstarter.package.edit',compact('package'  ));
     }
 
     /**
