@@ -1,3 +1,13 @@
+This is a starter kit designed to work just alongside a fresh or old Laravel 5.3 application.
+- All routes have `unstarter` prefix to avoid conflicts with your development work.
+
+There are only few convergence points which interfere with the app. These points are 
+- a route file registered in your `app\Providers\RouteServiceProvider.php`
+- package service providers and facadae declared in your `config/app/php`.
+- User Trait declared in the `app?user.php` model
+- some of the dependencies, such as `"Amranidev/scaffold-interface` have their own routes declared (`users`, `admin` in case of this one). One way of dealing with such conflicts is to move `App\Providers\RouteServiceProvider::class,` to position below the package service provide declaration.
+
+
 
 # Demo
 
@@ -6,18 +16,18 @@ http://dev.unrulynatives.com
 A DB-fed list of available features is available here:
 [DEMO app here](http://dev.unrulynatives.com/package)
 
-The current version of this package is 0.3.
+The current version of this package is 0.3.1
 
 # What it is
 1. This is an instance of Laravel PHP Framework 5.3. A starter app. Its philosophy is slightly different than similar starter kits. Here are the highlights:
 
-- all changes made over the original Laravel App have COMMENTS FOR BEGINNERS. You can delete them as soon as you consider them not necessary. 
+- All changes made over the original Laravel App have COMMENTS FOR BEGINNERS. You can delete them if you consider them not necessary. 
 
-- some solutions have variants, so that everyone one can pick the variant which suits their needs of the moment
+- Some solutions have variants, so that everyone one can pick the variant which suits their needs of the moment.
 
 - I have installed theme system (igaster/laravel-theme) to provide solutions for different CSS frameworks. You can switch between them at will:
 
-3. I am an amateur programmer, not a pro. The repository is a self-teaching tutorial, in a sense. This app was originally my private repository of snippets, solutions, answers from StackOverflow and ideas to approach my needs. It aggregates all code which might come useful, and was appplied across many various projects.
+3. I am an amateur programmer, not a pro. I treat this starter app and a standalone package with helpers as a self-teaching tutorial. These two packages were originally my private repository of snippets, solutions, answers from StackOverflow and ideas which I needed to develop my proejcts. They contain all code which might come useful.
 
 ### for the original Laravel Framework go to [Laravel Repository](https://github.com/laravel/laravel)
 
@@ -26,7 +36,7 @@ The current version of this package is 0.3.
 
 # FEATURES
 
-A complete, DB fed list of implemented and future features is avalable at the [DEMO site](http://dev.unrulynatives.com). Most of the features are developed by preconfigured 3rd aprty packages.
+A complete, DB-fed list of implemented and future features is avalable at the [DEMO site](http://dev.unrulynatives.com). Most of the features are developed by preconfigured 3rd aprty packages.
 
 ## Assorted solutions
 
@@ -189,7 +199,7 @@ Note: all files and changes made to the original Laravel 5.3 laravel app are mad
 
 ## Variant 2: Setting up a new app
 
-1. Pull the repository to your local drive
+1. Pull this starter kit to your local drive
 
 2. run `composer install`. You need to install the Composer itself to do that. See [Composer Download Page](https://getcomposer.org/download/).
 
@@ -222,7 +232,7 @@ Point your browser to the `localhost/APP_FOLDER/public/welcome`.. You should see
 
 This starter is designed to work alongside the bare Laravel app with as few modifications to the "blank" app as possible. The reason is simple: ssometimes new versions of the Laravel come with changes to the app structure.
 
-The majority of the files are copied by the `unrulynatives/helpers` package. Below are the 
+The majority of the files are copied by the `unrulynatives/helpers` package: as soon as you publish the package assets, all necessary foles would appear in your app: 
 
 - Copy middlewares from `app/Http/Middleware` and register them in the `\app\Http\Kernel.php` field.
 
@@ -230,7 +240,22 @@ The majority of the files are copied by the `unrulynatives/helpers` package. Bel
 
 - Copy `\config\project_specific.php` file to target app's `config\` folder.
 
-- Optional. THe newest changes to MySQL 5.7 produce some annoying problems with the app. This is how to avoid them. Modify the DB connection definition with this:
+### Integrating:
+
+- register the middlewares you have copied. Open your `app\Http\Kernel.php` and add 
+
+```
+        'admins' => \App\Http\Middleware\AllowAdmins::class,
+        'moderators' => \App\Http\Middleware\AllowModerators::class,
+        'developers' => \App\Http\Middleware\AllowDevelopers::class,
+```        
+to the `protected $routeMiddleware`.
+
+
+- add your morph class definitions in `app\Providers\AppServiceProvider.php`. Use the instructions in https://laravel.com/docs/5.3/upgrade
+
+
+### Optional steps. The newest changes to MySQL 5.7 produce some annoying problems with the app. This is how to avoid them. Modify the DB connection definition with this:
 
 ```
         'mysql' => [
@@ -243,9 +268,9 @@ The majority of the files are copied by the `unrulynatives/helpers` package. Bel
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
+
             // 'strict' => true,
             // 'engine' => null,
-
             // https://github.com/laravel/framework/issues/14908
             'strict' => true,
             'engine' => null,

@@ -43,7 +43,7 @@
         "doctrine/dbal": "2.4.5",
         "fabpot/goutte": "~3.1",
 
-        "unrulynatives/helpers": "dev-master",
+        "unrulynatives/helpers": "0.1.0",
         "unrulynatives/attitudes": "dev-master"
     
     

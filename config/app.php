@@ -282,7 +282,7 @@ return [
         // Unrulynatives packages for developing tests
         // Laraveldaily\Timezones\TimezonesServiceProvider::class,
         // Unrulynatives\Attitudes\AttitudesServiceProvider::class,
-        // Unrulynatives\Helpers\HelpersServiceProvider::class,
+        Unrulynatives\Helpers\HelpersServiceProvider::class,
 
     ],
 
