@@ -212,9 +212,8 @@ return [
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         // package for comments
-        // https://github.com/Slynova-Org/laravel-commentable
-        Slynova\Commentable\ServiceProvider::class,
-
+        // https://github.com/thyagobrejao/laravel-commentable
+        ThyagoBrejao\Commentable\ServiceProvider::class,
 
         // package for tracking user's activity see `starter/admintools` for all tools
         Spatie\Activitylog\ActivitylogServiceProvider::class,

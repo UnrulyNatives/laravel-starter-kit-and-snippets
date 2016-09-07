@@ -24,7 +24,7 @@
         "rtconner/laravel-likeable" : "1.*",
         "rtconner/laravel-tagging": "2.*",
         "simplesoftwareio/simple-qrcode": "1.*",
-        "slynova/laravel-commentable": "^2.0",
+
         "spatie/laravel-activitylog": "^1.6",
         "spatie/laravel-backup": "^3.9",
         "spatie/laravel-permission": "1.5.*@dev",
@@ -42,9 +42,10 @@
         "cmgmyr/messenger": "~2.0",
         "doctrine/dbal": "2.4.5",
         "fabpot/goutte": "~3.1",
+        "thyagobrejao/laravel-commentable": "^1.0",
 
-        "unrulynatives/helpers": "0.1.2",
-        "unrulynatives/attitudes": "0.0.3"
+        "unrulynatives/helpers": "0.1.*",
+        "unrulynatives/attitudes": "0.0.*"
     
     
     },
