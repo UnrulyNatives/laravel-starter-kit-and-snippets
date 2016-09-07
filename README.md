@@ -12,7 +12,7 @@ There are only few convergence points which interfere with the app. These points
 - some of the dependencies, such as `"Amranidev/scaffold-interface` have their own routes defined not in routes file, but in the package itself (`users`, `admin` in case of this one). 
 One way of dealing with such conflicts is to move `App\Providers\RouteServiceProvider::class,` to position below the package service provide declaration.
 
-
+[![Latest Stable Version](https://poser.pugx.org/unrulynatives/laravel-starter-kit/v/stable)](https://packagist.org/packages/unrulynatives/laravel-starter-kit)
 
 # Demo
 
