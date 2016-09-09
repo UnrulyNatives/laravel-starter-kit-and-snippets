@@ -299,7 +299,7 @@ align-self: center;
   width: 100%
 }
 
-.un_flex > h2 {
+.un_flex > h2, .un_flex > h3 {
     width: 100%;
     text-align: center;
     padding: 1rem;
@@ -481,7 +481,7 @@ align-self: center;
 }
 
 
-nav > a, nav > button, .un_nav > * {
+.un_nav > * {
   font-family: 'Ubuntu Condensed', sans-serif;
   border: 0;
     box-shadow: 
@@ -490,7 +490,18 @@ nav > a, nav > button, .un_nav > * {
 
 }
 
+.un_nav > * > i {
+  padding: .2rem .4rem;
+  margin-right: .5rem;
+  background: @cstep3;
+  font-size: 100%;
+  border-radius: 3px;
 
+}
+
+.un_nav .dropdown a, .un_nav .dropdown a i{
+  color: white!important;
+}
 .un_statistic:hover {
   text-decoration: none;
   background: @alert !important;
@@ -820,6 +831,7 @@ background: @step1 !important; /* fallback for old browsers */
 
 .csch_subtle3 {
     background: rgba(147,128,108,.1);
+    color: @cstep3;
 }
 
 .csch_subtle4 {
@@ -857,8 +869,6 @@ background: @step1 !important; /* fallback for old browsers */
 [class^="un_"].green,
 .un_interwoven > div:nth-of-type(even)
  {
-
-    color: white;
     background: #81b969; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #81b969 , #42613d); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #81b969 , #42613d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -907,8 +917,8 @@ color: @step4 !important;
 
 [class*="csch_dark"] a:not(.item)
  {
-    color: #ffe !important;
-    background: @cstep3;
+/*    color: #ffe !important;
+    background: @cstep3;*/
 }
 
 [class*="csch_dark"]  a.btn
@@ -1453,6 +1463,41 @@ div[class^="communique"] + div[class^="communique"]{
 }
 
 
+.un_btn_lg {
+    border: 2px solid rgba(211,208,193,.06);
+    border-radius: 3px;
+    padding: .3rem .6rem;
+    margin: .3rem;
+    font-size: 1.7rem;
+    background: @cstep4;
+  
+}
+
+.un_btn_lg:hover {
+  background: @cstep2!important;
+    text-decoration: none;       
+}
+.un_flex > .un_btn_lg {
+  padding: 1rem .3rem;
+  font-size: 1.5rem;
+  text-indent: 0;
+  /*width: 100%!important;*/
+  flex: 1 1 16rem;
+  max-width: 24rem;
+
+}
+.un_flex > .un_btn_lg > .him{
+  display: block;
+}
+
+
+.un_flex>.un_btn_lg {
+    flex: 1 1 auto;
+    margin: .3rem;
+}
+
+
+
 
 //////////////////////////////
 //
@@ -1818,6 +1863,9 @@ label {
   position: relative;
   z-index: 100;
 }
+
+
+
 //////////////////////////////
 //
 // ------------
@@ -2381,7 +2429,28 @@ label {
 @media screen and (max-width: 55.5em)
 {
 
-  div.un_flex_hs {
+.ui.dimmer p {
+  font-size: 45%;
+  color: yellow!important;
+}
+
+.un_nav > * > i {
+     padding: 0; 
+     margin-right: 0; 
+     background: none; 
+     color: white;
+}
+
+
+    .un_object > img {
+        max-width: 5rem;
+        max-height: 4rem;
+    }
+    .un_object {
+        flex-direction: column;
+    }
+
+  div.un_flex_hs,  div.un_box.un_flex_hc {
     flex-direction: column;
   }
 
@@ -2391,13 +2460,17 @@ label {
       display: inline-block; 
   }
   .him, 
-  a > span, 
+  .un_nav > * span, 
   span.caret:after,
   .dropdown-toggle::after
   {
       display: none !important;
   }
 
+
+.un_box img {
+  max-width: 100%;
+}
 
 .un_widehalf > div {
     min-width: 100%;
@@ -2408,14 +2481,6 @@ label {
     margin: 0;
     padding: 0;
   }
-
-    .un_object > img {
-        max-width: 5rem;
-        max-height: 4rem;
-    }
-    .un_object {
-        flex-direction: column;
-    }
 
 
     .un_choices,

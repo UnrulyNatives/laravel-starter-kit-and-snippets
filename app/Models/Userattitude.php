@@ -2,7 +2,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Slynova\Commentable\Traits\Commentable;
+use ThyagoBrejao\Commentable\Traits\Commentable;
 
 class Userattitude extends Model
 {
@@ -36,15 +36,15 @@ class Userattitude extends Model
         return $this->morphTo('item');
     }
 
-    public function questions()
+    public function packages()
     {
-        return $this->morphTo('item')->where('item_type', 'question');
+        return $this->morphTo('item')->where('item_type', 'package');
     }
 
 
-    public function topics()
+    public function features()
     {
-        return $this->morphTo('item')->where('item_type', 'topic');
+        return $this->morphTo('item')->where('item_type', 'feature');
     }
 
 

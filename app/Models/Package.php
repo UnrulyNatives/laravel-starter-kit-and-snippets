@@ -16,5 +16,15 @@ class Package extends Model
 
     protected $table = 'packages';
 
+
+    public function importances() {
+        return $this->hasMany(\App\Models\Userattitude::class, 'creator_id');
+    }
+
+    public function attitudes() {
+        return $this->hasMany(\App\Models\Userattitude::class, 'creator_id');
+    }
+
+
 	
 }

@@ -262,7 +262,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
 
 
-        Spatie\ResponseCache\ResponseCacheServiceProvider::class,
+        // Spatie\ResponseCache\ResponseCacheServiceProvider::class,
 
         Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
 
@@ -355,7 +355,7 @@ return [
         'UrlSigner' => Spatie\UrlSigner\Laravel\UrlSignerFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
-        'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
+        // 'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
         'Captcha' => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
         'Widget'       => Arrilot\Widgets\Facade::class,
         'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
