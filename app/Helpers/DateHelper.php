@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Helpers;
+namespace Unrulynatives\Helpers\Helpers;
 
 class DateHelper {
 

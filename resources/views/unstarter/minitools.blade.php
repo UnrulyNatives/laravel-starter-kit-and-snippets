@@ -1,4 +1,4 @@
-@extends('starter.layouts.master_bootstrap_simple')
+@extends('unstarter.layouts.master_bootstrap_simple')
 
 @section('content')
 
@@ -8,7 +8,29 @@
 
 </div>
 
+<table class = "table table-striped table-bordered">
+  @foreach($object as $o)
+    <tr>
+                        
+                        <td>{{$Feature->name}}</td>
+                        
+                        <td>{{$Feature->description}}</td>
+                        
+                        <td>{{$Feature->demonstration_URL}}
 
+                            @includeif('starter.features.'.$Feature->id)
+
+                        </td>
+                        
+                        
+                        <td>
+                                <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "unstarter/feature/{{$Feature->id}}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
+                                <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = 'unstarter/feature/{{$Feature->id}}/edit'><i class = 'material-icons'>edit</i></a>
+                                <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = 'unstarter/feature/{{$Feature->id}}'><i class = 'material-icons'>info</i></a>
+                        </td>
+                    </tr>
+  @endforeach
+</table>
 @stop
 
 

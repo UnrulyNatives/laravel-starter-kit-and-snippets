@@ -490,18 +490,7 @@ align-self: center;
 
 }
 
-.un_nav > * > i {
-  padding: .2rem .4rem;
-  margin-right: .5rem;
-  background: @cstep3;
-  font-size: 100%;
-  border-radius: 3px;
 
-}
-
-.un_nav .dropdown a, .un_nav .dropdown a i{
-  color: white!important;
-}
 .un_statistic:hover {
   text-decoration: none;
   background: @alert !important;
@@ -2429,28 +2418,7 @@ label {
 @media screen and (max-width: 55.5em)
 {
 
-.ui.dimmer p {
-  font-size: 45%;
-  color: yellow!important;
-}
-
-.un_nav > * > i {
-     padding: 0; 
-     margin-right: 0; 
-     background: none; 
-     color: white;
-}
-
-
-    .un_object > img {
-        max-width: 5rem;
-        max-height: 4rem;
-    }
-    .un_object {
-        flex-direction: column;
-    }
-
-  div.un_flex_hs,  div.un_box.un_flex_hc {
+  div.un_flex_hs {
     flex-direction: column;
   }
 
@@ -2460,17 +2428,13 @@ label {
       display: inline-block; 
   }
   .him, 
-  .un_nav > * span, 
+  a > span, 
   span.caret:after,
   .dropdown-toggle::after
   {
       display: none !important;
   }
 
-
-.un_box img {
-  max-width: 100%;
-}
 
 .un_widehalf > div {
     min-width: 100%;
@@ -2481,6 +2445,14 @@ label {
     margin: 0;
     padding: 0;
   }
+
+    .un_object > img {
+        max-width: 5rem;
+        max-height: 4rem;
+    }
+    .un_object {
+        flex-direction: column;
+    }
 
 
     .un_choices,

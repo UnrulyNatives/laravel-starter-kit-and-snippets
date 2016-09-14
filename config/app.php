@@ -209,8 +209,6 @@ return [
         // https://github.com/rtconner/laravel-tagging
         \Conner\Tagging\Providers\TaggingServiceProvider::class,
 
-
-
         // package for slugs - search-engine-friendly descriptive urls
         // https://github.com/cviebrock/eloquent-sluggable
         Cviebrock\EloquentSluggable\ServiceProvider::class,
@@ -254,10 +252,8 @@ return [
         // https://github.com/spatie/laravel-analytics
         Spatie\Analytics\AnalyticsServiceProvider::class,
 
-
         // translations manager
         Barryvdh\TranslationManager\ManagerServiceProvider::class,
-
         
         // protects against dumb passwords "unicodeveloper/laravel-password": "1.0.*"
         Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,

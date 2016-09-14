@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Edit Feature</title>
-    </head>
-    <body>
+@extends('unstarter.layouts.master_bootstrap_scaffold')
+
+
+@section('content')
+
+
         <div class = 'container'>
             <h1>Edit Feature</h1>
-            <form method = 'get' action = '{{url("feature")}}'>
+            <form method = 'get' action = '{{url("unstarter/feature")}}'>
                 <button class = 'btn btn-danger'>Feature Index</button>
             </form>
             <br>
@@ -22,6 +17,14 @@
                     <label for="name">name</label>
                     <input id="name" name = "name" type="text" class="form-control" value="{{$feature->name}}">
                 </div>
+
+
+            {{-- field: featuretype_id --}}
+            <?php
+            $ftp = array('1' => 'by a package','2' => 'JS/jQuery minitool',);
+             ?>
+            @include('unstarter.forms._segment_select', array('purpose' => $task, 'fieldname' => 'featuretype_id', 'fieldlabel' => 'featuretype_id','selectarray' => 'ftp','preselected_val' => '', 'icon' => '', 'class' => '' ))
+
                 
                 <div class="form-group">
                     <label for="description">description</label>
@@ -43,7 +46,13 @@
                 <button class = 'btn btn-primary' type ='submit'>Update</button>
             </form>
         </div>
-    </body>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</html>
+
+@stop
+
+
+@push('css')
+
+@endpush
+@push('scripts_in_tail')
+
+@endpush       

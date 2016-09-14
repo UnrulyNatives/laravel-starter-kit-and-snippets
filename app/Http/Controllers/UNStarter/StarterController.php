@@ -42,6 +42,8 @@ class StarterController extends Controller
     public function minitools()
     {
         $user= Auth::user();
+
+        $object = Feature::where('featuretype_id', 2)->get();
         return view('unstarter.minitools', compact('user'));
     }
 

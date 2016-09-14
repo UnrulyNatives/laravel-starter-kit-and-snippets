@@ -25,7 +25,7 @@ class FeatureController extends Controller
     public function index()
     {
         $features = Feature::all();
-        activity()->log('Feature index opened'); // spatie activity-log
+        // activity()->log('Feature index opened'); // spatie activity-log
         return view('unstarter.feature.index',compact('features'));
     }
 
@@ -38,7 +38,7 @@ class FeatureController extends Controller
     {
         $pac = array(null => 'Package providing this feature...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();            
         return view('unstarter.feature.create', compact('pac'))
-            ->with('task', 'create')->with('itemkind', 'actions');
+            ->with('task', 'create')->with('itemkind', 'features');
     }
 
     /**
@@ -54,6 +54,7 @@ class FeatureController extends Controller
         
         $feature->name = $request->name;
 
+        $feature->featuretype_id = $request->featuretype_id;
         
         $feature->description = $request->description;
 
@@ -101,7 +102,8 @@ class FeatureController extends Controller
 
          $pac = array(null => 'Package providing this feature...') + Package::orderBy('id', 'desc')->pluck('name', 'id')->all();        
         $feature = Feature::findOrfail($id);
-        return view('unstarter.feature.edit',compact('feature','pac'));
+        return view('unstarter.feature.edit',compact('feature','pac'))
+            ->with('task','edit')->with('itemkind', 'features');
     }
 
     /**
@@ -119,6 +121,8 @@ class FeatureController extends Controller
         
         $feature->description = $request->description;
         
+        $feature->featuretype_id = $request->featuretype_id;
+
         $feature->demonstration_URL = $request->demonstration_URL;
 
         $feature->package_id = $request->package_id;       

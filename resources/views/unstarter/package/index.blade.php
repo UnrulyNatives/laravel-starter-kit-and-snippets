@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Index Package</title>
-    </head>
-    <body>
+@extends('unstarter.layouts.master_bootstrap_scaffold')
+
+
+@section('content')
+
+
         <div class = 'container'>
             <h1>Package Index</h1>
 
             <div class="communique-info">
                 Descriptions are pasted from the original respective packages.
             </div>
-            <form class = 'col s3' method = 'get' action = '{{url("package")}}/create'>
+            <form class = 'col s3' method = 'get' action = '{{url("unstarter/package")}}/create'>
                 <button class = 'btn btn-primary' type = 'submit'>Create New Package</button>
             </form>
             <br>
@@ -48,9 +42,9 @@
                         
                         
                         <td>
-                                <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/package/{{$Package->id}}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
-                                <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/package/{{$Package->id}}/edit'><i class = 'material-icons'>edit</i></a>
-                                <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/package/{{$Package->id}}'><i class = 'material-icons'>info</i></a>
+                                <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "unstarter/package/{{$Package->id}}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
+                                <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = 'unstarter/package/{{$Package->id}}/edit'><i class = 'material-icons'>edit</i></a>
+                                <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = 'unstarter/package/{{$Package->id}}'><i class = 'material-icons'>info</i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -62,10 +56,18 @@
         <div class = 'AjaxisModal'>
         </div>
     </div>
-</body>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+@stop 
+
+
+
+@push('css')
+
+@endpush
+@push('scripts_in_tail')
 <script> var baseURL = "{{URL::to('/')}}"</script>
 <script src = "{{ URL::asset('js/AjaxisBootstrap.js')}}"></script>
 <script src = "{{ URL::asset('js/scaffold-interface-js/customA.js')}}"></script>
+@endpush       
+
+
 </html>

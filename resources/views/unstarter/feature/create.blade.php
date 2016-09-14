@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Let browser know website is optimized for mobile-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Create Feature</title>
-    </head>
-    <body>
-        <div class = 'container'>
+@extends('unstarter.layouts.master_bootstrap_scaffold')
+
+@section('content')
+
             <h1>Create Feature</h1>
-            <form method = 'get' action = '{{url("feature")}}'>
+            <form method = 'get' action = '{{url("unstarter/feature")}}'>
                 <button class = 'btn btn-danger'>Feature Index</button>
             </form>
             <br>
@@ -22,6 +14,12 @@
                     <label for="name">name</label>
                     <input id="name" name = "name" type="text" class="form-control">
                 </div>
+
+            {{-- field: featuretype_id --}}
+            <?php
+            $ftp = array('1' => 'by a package','2' => 'JS/jQuery minitool',);
+             ?>
+            @include('unstarter.forms._segment_select', array('purpose' => $task, 'fieldname' => 'featuretype_id', 'fieldlabel' => 'featuretype_id','selectarray' => 'ftp','preselected_val' => '', 'icon' => '', 'class' => '' ))
                 
                 <div class="form-group">
                     <label for="description">description</label>
@@ -29,7 +27,7 @@
                 </div>
 
     {{-- field: package_id --}}
-    @include('forms._segment_select', array('purpose' => $task, 'fieldname' => 'package_id', 'fieldlabel' => 'package_id','selectarray' => 'pac','preselected_val' => '', 'icon' => '', 'class' => '' ))
+    @include('unstarter.forms._segment_select', array('purpose' => $task, 'fieldname' => 'package_id', 'fieldlabel' => 'package_id','selectarray' => 'pac','preselected_val' => '', 'icon' => '', 'class' => '' ))
                 
                 <div class="form-group">
                     <label for="demonstration_URL">demonstration_URL</label>
@@ -40,7 +38,15 @@
                 <button class = 'btn btn-primary' type ='submit'>Create</button>
             </form>
         </div>
-    </body>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</html>
+@stop
+
+
+@push('css')
+
+@endpush
+@push('scripts_in_tail')
+
+{!! Html::script('js/select2.min.js') !!}
+{!! Html::script('js/select2_language_pl.js') !!}
+
+@endpush       

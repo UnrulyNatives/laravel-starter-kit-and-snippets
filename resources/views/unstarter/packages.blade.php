@@ -1,4 +1,4 @@
-@extends('starter.layouts.master_bootstrap_simple')
+@extends('unstarter.layouts.master_bootstrap_simple')
 
 @section('content')
 

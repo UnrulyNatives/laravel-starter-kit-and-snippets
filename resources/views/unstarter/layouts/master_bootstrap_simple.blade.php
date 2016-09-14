@@ -118,7 +118,7 @@
 
 
         <link rel="stylesheet"  type="text/css" href="{{asset('css/elements_common.css')}}">
-
+        @stack('css')
 
 
         <!-- filling up universal modal   -->
@@ -134,5 +134,8 @@
 
 
         {!! Html::script('js/minitool_modal_universal.js') !!}
+
+        @stack('scripts_in_tail')
+
     </body>
 </html>

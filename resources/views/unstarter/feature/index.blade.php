@@ -5,7 +5,7 @@
 
 
             <h1>Feature Index:</h1>
-            <form class = 'col s3' method = 'get' action = '{{url("feature")}}/create'>
+            <form class = 'col s3' method = 'get' action = '{{url("unstarter/feature")}}/create'>
                 <button class = 'btn btn-primary' type = 'submit'>Create New Feature</button>
             </form>
             <br>
@@ -39,9 +39,9 @@
                         
                         
                         <td>
-                                <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "/feature/{{$Feature->id}}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
-                                <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = '/feature/{{$Feature->id}}/edit'><i class = 'material-icons'>edit</i></a>
-                                <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = '/feature/{{$Feature->id}}'><i class = 'material-icons'>info</i></a>
+                                <a data-toggle="modal" data-target="#myModal" class = 'delete btn btn-danger btn-xs' data-link = "unstarter/feature/{{$Feature->id}}/deleteMsg" ><i class = 'material-icons'>delete</i></a>
+                                <a href = '#' class = 'viewEdit btn btn-primary btn-xs' data-link = 'unstarter/feature/{{$Feature->id}}/edit'><i class = 'material-icons'>edit</i></a>
+                                <a href = '#' class = 'viewShow btn btn-warning btn-xs' data-link = 'unstarter/feature/{{$Feature->id}}'><i class = 'material-icons'>info</i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -49,4 +49,53 @@
             </table>
 
 
-@stop        
+@stop 
+
+
+
+@push('css')
+    <link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
+
+@endpush
+@push('scripts_in_tail')
+
+{!! Html::script('js/select2.min.js') !!}
+{!! Html::script('js/select2_language_pl.js') !!}
+
+    <script>
+$(document).ready(function() {
+
+    $("select:not([get-byajax])").select2();
+    $("select[get-byajax-entities]").select2({
+
+        // var baseurl = "{{URL::to('get_by_ajax/')}}";
+        // var itemkind = $(this).attr("get-byajax");
+        // var readyurl = baseurl + '/' + itemkind;
+
+    ajax: {
+        url: "{{URL::to('get_by_ajax/Entity')}}",
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+        return {
+            q: params.term
+        };
+        },
+        processResults: function (data) {
+        return {
+            results: data
+        };
+        },
+        cache: true
+    },
+    escapeMarkup: function (markup) {return markup; }, // let our custom formatter work
+    minimumInputLength: 4
+    });
+
+
+});
+
+});
+    </script>
+
+@endpush       

@@ -26,25 +26,28 @@
 
 
 
-        <!-- this loads CDNJS or local files depending on environment -->
-        @if( \App::environment() == 'local')
-            @include('unstarter.layouts.files_local')
-            @include('unstarter.layouts.files_local_bootstrap')
-            @include('unstarter.layouts.files_local_select2')
-        @else
-            @include('unstarter.layouts.files_cdnjs')
-            @include('unstarter.layouts.files_cdnjs_bootstrap')
-            @include('unstarter.layouts.files_cdnjs_select2')
-        @endif
+    <!-- this loads CDNJS or local files depending on environment -->
+    @if( \App::environment() == 'local')
+        @include('unstarter.layouts.files_local')
+        @include('unstarter.layouts.files_local_bootstrap')
+        @include('unstarter.layouts.files_local_select2')
+    @else
+        @include('unstarter.layouts.files_cdnjs')
+        @include('unstarter.layouts.files_cdnjs_bootstrap')
+        @include('unstarter.layouts.files_cdnjs_select2')
+    @endif
 
 
-        <link rel="stylesheet"  type="text/css" href="{{asset('css/elements_common.css')}}">
+    <link rel="stylesheet"  type="text/css" href="{{asset('css/elements_common.css')}}">
+    @stack('css')
 
 
 
 
+    <script> var baseURL = "{{URL::to('/')}}"</script>
+    <script src = "{{ URL::asset('js/AjaxisBootstrap.js')}}"></script>
+    <script src = "{{ URL::asset('js/scaffold-interface-js/customA.js')}}"></script>
 
-<script> var baseURL = "{{URL::to('/')}}"</script>
-<script src = "{{ URL::asset('js/AjaxisBootstrap.js')}}"></script>
-<script src = "{{ URL::asset('js/scaffold-interface-js/customA.js')}}"></script>
+    @stack('scripts_in_tail')
+
 </html>

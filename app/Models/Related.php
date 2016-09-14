@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use Slynova\Commentable\Traits\Commentable;
+use ThyagoBrejao\Commentable\Traits\Commentable;
 // use Watson\Rememberable\Rememberable;
 
 class Related extends Model

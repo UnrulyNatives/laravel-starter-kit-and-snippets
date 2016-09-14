@@ -1,5 +1,5 @@
 <?php
-namespace App\Helpers;
+namespace Unrulynatives\Helpers;
 
 use App\User;
 

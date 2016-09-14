@@ -66,26 +66,30 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
     Route::get('admintools/regenerate-model-name/{modelname?}', 'UNStarter\AdminToolsController@regenerate_model_name');
 
 
-//package Resources
-/********************* package ***********************************************/
-Route::resource('package','\App\Http\Controllers\UNStarter\PackageController');
-Route::post('package/{id}/update','\App\Http\Controllers\UNStarter\PackageController@update');
-Route::get('package/{id}/delete','\App\Http\Controllers\UNStarter\PackageController@destroy');
-Route::get('package/{id}/deleteMsg','\App\Http\Controllers\UNStarter\PackageController@DeleteMsg');
-/********************* package ***********************************************/
 
 
-//feature Resources
-/********************* feature ***********************************************/
-Route::resource('feature','\App\Http\Controllers\UNStarter\FeatureController');
-Route::post('feature/{id}/update','\App\Http\Controllers\UNStarter\FeatureController@update');
-Route::get('feature/{id}/delete','\App\Http\Controllers\UNStarter\FeatureController@destroy');
-Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\UNStarter\FeatureController@DeleteMsg');
-/********************* feature ***********************************************/
+    //package Resources
+    /********************* package ***********************************************/
+    Route::resource('package','\App\Http\Controllers\UNStarter\PackageController');
+    Route::post('package/{id}/update','\App\Http\Controllers\UNStarter\PackageController@update');
+    Route::get('package/{id}/delete','\App\Http\Controllers\UNStarter\PackageController@destroy');
+    Route::get('package/{id}/deleteMsg','\App\Http\Controllers\UNStarter\PackageController@DeleteMsg');
+    /********************* package ***********************************************/
+
+
+    //feature Resources
+    /********************* feature ***********************************************/
+    Route::get('feature/create','\App\Http\Controllers\UNStarter\FeatureController@create');
+
+    Route::resource('feature','\App\Http\Controllers\UNStarter\FeatureController');
+    Route::post('feature/{id}/update','\App\Http\Controllers\UNStarter\FeatureController@update');
+    Route::get('feature/{id}/delete','\App\Http\Controllers\UNStarter\FeatureController@destroy');
+    Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\UNStarter\FeatureController@DeleteMsg');
+    /********************* feature ***********************************************/
+
 
 
 });
-
 
 
 //user_setting Resources
