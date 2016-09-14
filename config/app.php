@@ -183,31 +183,50 @@ return [
 
 
 
-        Collective\Html\HtmlServiceProvider::class,
+        // a scaffolding package https://github.com/laralib/l5scaffold
+        // "Laralib\L5scaffold\GeneratorsServiceProvider",
+        Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
+
+        Amranidev\Ajaxis\AjaxisServiceProvider::class,
+
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+
+        Arrilot\Widgets\ServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        ClassyGeeks\Potion\PotionServiceProvider::class,
+
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
+
+        Collective\Html\HtmlServiceProvider::class,
+
+        \Conner\Likeable\LikeableServiceProvider::class,
+
+        // package for tags
+        // https://github.com/rtconner/laravel-tagging
+        \Conner\Tagging\Providers\TaggingServiceProvider::class,
+
+
 
         // package for slugs - search-engine-friendly descriptive urls
         // https://github.com/cviebrock/eloquent-sluggable
         Cviebrock\EloquentSluggable\ServiceProvider::class,
 
-
-
         // Theme package. In this app it is used for switching between CSS framework.
         // https://github.com/igaster/laravel-theme
-        // igaster\laravelTheme\themeServiceProvider::class,
         igaster\laravelTheme\themeServiceProvider::class,
 
-
-        // Intervention\Image\ImageServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         Jenssegers\Agent\AgentServiceProvider::class,
 
         Jenssegers\Date\DateServiceProvider::class,
 
-        // package for tags
-        // https://github.com/rtconner/laravel-tagging
-        \Conner\Tagging\Providers\TaggingServiceProvider::class,
+        // https://github.com/laravel/socialite
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
@@ -218,35 +237,13 @@ return [
         // package for tracking user's activity see `starter/admintools` for all tools
         Spatie\Activitylog\ActivitylogServiceProvider::class,
 
-
-
-        Spatie\Permission\PermissionServiceProvider::class,
-        Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
-        Amranidev\Ajaxis\AjaxisServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
-
-        \Conner\Likeable\LikeableServiceProvider::class,
 
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
 
-        // translations manager
-        Barryvdh\TranslationManager\ManagerServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
-        Arcanedev\LogViewer\LogViewerServiceProvider::class,
-        
-
-
-
-        // protects against dumb passwords "unicodeveloper/laravel-password": "1.0.*"
-        Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
-
-        // UN package to manage upvoting system
-        // Unrulynatives\Attitudes\AttitudesServiceProvider::class,
-
-
-
-        // a scaffolding package https://github.com/laralib/l5scaffold
-        // "Laralib\L5scaffold\GeneratorsServiceProvider",
+        // Spatie\ResponseCache\ResponseCacheServiceProvider::class,
 
         // https://github.com/spatie/geocoder
         Spatie\Geocoder\GeocoderServiceProvider::class,
@@ -258,29 +255,24 @@ return [
         Spatie\Analytics\AnalyticsServiceProvider::class,
 
 
-        // https://github.com/laravel/socialite
-        Laravel\Socialite\SocialiteServiceProvider::class,
+        // translations manager
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
 
-
-        // Spatie\ResponseCache\ResponseCacheServiceProvider::class,
-
+        
+        // protects against dumb passwords "unicodeveloper/laravel-password": "1.0.*"
         Unicodeveloper\DumbPassword\DumbPasswordServiceProvider::class,
 
 
-        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
-
-        Arrilot\Widgets\ServiceProvider::class,
-
-        ClassyGeeks\Potion\PotionServiceProvider::class,
-
-        Cmgmyr\Messenger\MessengerServiceProvider::class,
 
 
-
-
-        // Unrulynatives packages for developing tests
+        // Unrulynatives packages for developing tests only
         // Laraveldaily\Timezones\TimezonesServiceProvider::class,
+        
+        // UN package to manage upvoting system
+        // Unrulynatives\Attitudes\AttitudesServiceProvider::class,
         Unrulynatives\Attitudes\AttitudesServiceProvider::class,
+
+        // UN package to put starter kit on top of your app
         Unrulynatives\Helpers\HelpersServiceProvider::class,
 
     ],

@@ -66,11 +66,6 @@ Route::group(['prefix' => 'unstarter','middleware' => ['setTheme:bootstrap']], f
     Route::get('admintools/regenerate-model-name/{modelname?}', 'UNStarter\AdminToolsController@regenerate_model_name');
 
 
-
-});
-
-
-
 //package Resources
 /********************* package ***********************************************/
 Route::resource('package','\App\Http\Controllers\UNStarter\PackageController');
@@ -87,6 +82,11 @@ Route::post('feature/{id}/update','\App\Http\Controllers\UNStarter\FeatureContro
 Route::get('feature/{id}/delete','\App\Http\Controllers\UNStarter\FeatureController@destroy');
 Route::get('feature/{id}/deleteMsg','\App\Http\Controllers\UNStarter\FeatureController@DeleteMsg');
 /********************* feature ***********************************************/
+
+
+});
+
+
 
 //user_setting Resources
 /********************* user_setting ***********************************************/

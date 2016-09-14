@@ -7,20 +7,24 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.3.*",
-
-
+        "laravel/socialite": "~2.0",
         "laravelcollective/html": "5.3.x-dev",
 
         "Amranidev/scaffold-interface": "dev-master",
         "arcanedev/log-viewer": "~3.0",
+        "arcanedev/no-captcha": "~3.0",
+        "arrilot/laravel-widgets": "dev-master",
         "barryvdh/laravel-debugbar": "*",
         "barryvdh/laravel-translation-manager": "dev-master",
+        "classygeeks/potion": "dev-master",
+        "cmgmyr/messenger": "~2.0",
         "cviebrock/eloquent-sluggable": "dev-master",
+        "doctrine/dbal": "2.4.5",
+        "fabpot/goutte": "~3.1",
         "igaster/laravel-theme": "~1",
-        "intervention/image": "dev-develop",
+        "intervention/image": "2.*",
         "jenssegers/agent" : "~2.3",
-        "jenssegers/date": "^3.2@dev",
-        "laravel/socialite": "~2.0",
+        "jenssegers/date": "^3.2",
         "rtconner/laravel-likeable" : "1.*",
         "rtconner/laravel-tagging": "2.*",
         "simplesoftwareio/simple-qrcode": "1.*",
@@ -32,21 +36,14 @@
         "spatie/laravel-or-abort": "^1.0",
         "spatie/geocoder": "^2.1",
         "spatie/laravel-url-signer": "^1.1",
-        "watson/rememberable" : "dev-master",
         "spatie/laravel-analytics": "^2.1",
         "spatie/laravel-responsecache": "dev-master",
-        "unicodeveloper/laravel-password": "1.0.*",
-        "arcanedev/no-captcha": "~3.0",
-        "arrilot/laravel-widgets": "dev-master",
-        "classygeeks/potion": "dev-master",
-        "cmgmyr/messenger": "~2.0",
-        "doctrine/dbal": "2.4.5",
-        "fabpot/goutte": "~3.1",
         "thyagobrejao/laravel-commentable": "^1.0",
+        "unicodeveloper/laravel-password": "1.0.*",
+        "watson/rememberable" : "dev-master",
 
-        "unrulynatives/helpers": "0.1.*",
-        "unrulynatives/attitudes": "0.0.*"
-    
+        "unrulynatives/helpers": "0.*",
+        "unrulynatives/attitudes": "0.*"
     
     },
     "require-dev": {

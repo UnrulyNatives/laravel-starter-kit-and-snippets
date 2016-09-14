@@ -35,19 +35,19 @@
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane active" id="home" role="tabpanel">
-        @include('starter.frontend.sections._components_common_communique')
+        @include('unstarter.frontend.sections._components_common_communique')
   </div>
   <div class="tab-pane" id="profile" role="tabpanel">
 
-        @include('starter.frontend.sections._components_common_buttons')
+        @include('unstarter.frontend.sections._components_common_buttons')
   </div>
   <div class="tab-pane" id="messages" role="tabpanel">
 
-        @include('starter.frontend.sections._components_common_containers')
+        @include('unstarter.frontend.sections._components_common_containers')
   </div>
   <div class="tab-pane" id="settings" role="tabpanel">
 
-        @include('starter.frontend.sections._components_common_colorschemes')
+        @include('unstarter.frontend.sections._components_common_colorschemes')
   </div>
 </div>
 

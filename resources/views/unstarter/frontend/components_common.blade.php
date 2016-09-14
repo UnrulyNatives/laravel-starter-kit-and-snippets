@@ -1,4 +1,4 @@
-@extends('starter.layouts.master_bootstrap_simple')
+@extends('unstarter.layouts.master_bootstrap_simple')
 
 @section('content')
 
@@ -8,19 +8,19 @@
         PHP & Server status
         </a>
 
-        @include('starter.frontend._header')
+        @include('unstarter.frontend._header')
 
 
         <div class="un_flex un_flex_ht">
            <aside>
-               @include('starter.frontend._table_of_contents')
+               @include('unstarter.frontend._table_of_contents')
            </aside>
            <article id="placeholder_main" class="csch_subtle3 m-a-1">
 
 
  
 
-        @include('starter.frontend._components_common')
+        @include('unstarter.frontend._components_common')
 
 
            </article>
@@ -37,7 +37,7 @@
     
     @else
 
-        @include('segments._notice_developers_only')
+        @include('unstarter.segments._notice_developers_only')
 
     @endif
 

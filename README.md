@@ -21,8 +21,6 @@ http://dev.unrulynatives.com
 A DB-fed list of available features is available here:
 [DEMO app here](http://dev.unrulynatives.com/package)
 
-The current version of this package is 0.3.5
-
 # What it is
 1. This is an instance of Laravel PHP Framework 5.3. A starter app. Its philosophy is slightly different than similar starter kits. Here are the highlights:
 
